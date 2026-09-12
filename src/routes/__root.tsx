@@ -10,6 +10,52 @@ import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
 import nesCss from "../styles/nes.css?url";
 
+const fouceStyles = `
+  html.app-cloak body {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  html.app-ready body {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.app-ready body {
+      transition: opacity 160ms ease-out;
+    }
+  }
+`;
+
+const fouceScript = `
+  (() => {
+    const root = document.documentElement;
+    const show = () => {
+      root.classList.remove("app-cloak");
+      root.classList.add("app-ready");
+    };
+
+    const timeout = window.setTimeout(show, 2000);
+    const done = () => {
+      window.clearTimeout(timeout);
+      window.requestAnimationFrame(show);
+    };
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(done, done);
+      return;
+    }
+
+    if (document.readyState === "complete") {
+      done();
+      return;
+    }
+
+    window.addEventListener("load", done, { once: true });
+  })();
+`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -40,9 +86,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="app-cloak" suppressHydrationWarning>
       <head>
+        <style dangerouslySetInnerHTML={{ __html: fouceStyles }} />
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: fouceScript }} />
       </head>
       <body>
         {children}
