@@ -211,7 +211,7 @@ function LovablePatternsPage() {
             </NesList>
           </NesContainer>
           <NesContainer title="NEEDS HUMAN ACTION" dark rounded>
-            <NesList variant="disc" className="is-dark">
+            <NesList variant="disc" dark>
               <li>Approve publish text</li>
               <li>Confirm pricing language</li>
               <li>Choose beta-only or broad release</li>
