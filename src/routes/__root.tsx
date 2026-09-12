@@ -45,12 +45,14 @@ const initialRevealScript = `
       window.requestAnimationFrame(show);
     };
 
-    window.addEventListener("load", done, { once: true });
+    if (document.readyState === "complete") {
+      done();
+    } else {
+      window.addEventListener("load", done, { once: true });
+    }
 
     if (document.fonts?.ready) {
       document.fonts.ready.then(done, done);
-    } else if (document.readyState === "complete") {
-      done();
     }
   })();
 `;
