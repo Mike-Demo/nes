@@ -10,7 +10,7 @@ import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
 import nesCss from "../styles/nes.css?url";
 
-const fouceStyles = `
+const initialRevealStyles = `
   html.app-cloak body {
     opacity: 0;
     visibility: hidden;
@@ -28,10 +28,13 @@ const fouceStyles = `
   }
 `;
 
-const fouceScript = `
+const initialRevealScript = `
   (() => {
     const root = document.documentElement;
+    let shown = false;
     const show = () => {
+      if (shown) return;
+      shown = true;
       root.classList.remove("app-cloak");
       root.classList.add("app-ready");
     };
@@ -42,17 +45,13 @@ const fouceScript = `
       window.requestAnimationFrame(show);
     };
 
+    window.addEventListener("load", done, { once: true });
+
     if (document.fonts?.ready) {
       document.fonts.ready.then(done, done);
-      return;
-    }
-
-    if (document.readyState === "complete") {
+    } else if (document.readyState === "complete") {
       done();
-      return;
     }
-
-    window.addEventListener("load", done, { once: true });
   })();
 `;
 
@@ -88,9 +87,9 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="app-cloak" suppressHydrationWarning>
       <head>
-        <style dangerouslySetInnerHTML={{ __html: fouceStyles }} />
+        <style dangerouslySetInnerHTML={{ __html: initialRevealStyles }} />
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: fouceScript }} />
+        <script dangerouslySetInnerHTML={{ __html: initialRevealScript }} />
       </head>
       <body>
         {children}
