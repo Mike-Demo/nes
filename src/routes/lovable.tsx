@@ -129,7 +129,7 @@ function LovablePatternsPage() {
             <NesBalloon from="left">
               <p>Draft an onboarding checklist for new Lovable workspace admins.</p>
             </NesBalloon>
-            <NesBalloon from="right" className="is-dark">
+            <NesBalloon from="right" className="lovable-balloon-right is-dark">
               <p>I prepared setup, permissions, guardrails, and launch readiness steps.</p>
             </NesBalloon>
             <div className="lovable-row">
