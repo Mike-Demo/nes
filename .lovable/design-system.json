@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "name": "NES",
+    "package": "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6",
+    "version": "1.0.0",
+    "framework": "react",
+    "css_framework": "plain-css",
+    "starter_template": "custom_design_system",
+    "theme_files": [
+      "src/styles/nes.css"
+    ],
+    "source_type": "local",
+    "source_manifest": {
+      "#enrichment": "82901e3d2c60c1ca6ed95deb33911c3f836de734403beebd3f30bf4877c01e1a",
+      ".dsignore": "2c7d76468c15bc0f1499420154f01ae3",
+      ".gitignore": "6059213806e442947666752f3db6bfdc",
+      ".lovable/meta.yaml": "132625925356b1a609f96044c34a7f42",
+      ".lovable/plan/nes-css-design-system-library-2026-09-12.md": "0b69537b06815182ad1389b572121228",
+      ".lovable/sources.yaml": "5ea3100338215d9e4a6ed380b1e63b7b",
+      ".lovable/system.md": "c421eb8c3d162cfe5587eb1769000cb1",
+      "LICENSE-nes-css": "e565b575ac080dbd49eba74669fe2dd3",
+      "README.md": "d19675c449605f23c7cfa133c69b398b",
+      "bunfig.toml": "25f4c8696b22b0943db7191e0cdf7942",
+      "eslint.config.js": "07a67437fb1a45ab36d6de0145ff09de",
+      "lovable.toml": "9636c1bf32f9901bfba4eabb92981217",
+      "mockupPreviewPlugin.ts": "8024d439734f27417621536969f64db1",
+      "package.json": "707caee8cbea8d6122afb0af9e20c7e6",
+      "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "src/assets/cursors/cursor-click.png": "751fb548b97168b9087f397192c7bc93",
+      "src/assets/cursors/cursor.png": "9b60cca4bc7f5a5efc45229018fbf1cf",
+      "src/components/NesAvatar.tsx": "dd0ba49ed1c884fe1915b27706cf2204",
+      "src/components/NesBadge.tsx": "08e09cb6aea947f0792cb4c6b43d8824",
+      "src/components/NesBalloon.tsx": "4c7f74cd67e80479c8de666a0d31562d",
+      "src/components/NesButton.tsx": "bb9a4a72643471464e82c323695f40e3",
+      "src/components/NesCheckbox.tsx": "7370c0795b6c6c9a1c3ca767504504ce",
+      "src/components/NesContainer.tsx": "4fb8ed007a7113693de92b687c270270",
+      "src/components/NesDialog.tsx": "c2b6beaf0c4a0b00e3a57dcf1348f559",
+      "src/components/NesField.tsx": "5204af1cbc6c5f40a67faa1aac1faf48",
+      "src/components/NesIcon.tsx": "6f9e5902fbf33ab0a7d884fa2f817ffd",
+      "src/components/NesInput.tsx": "850e7ba00aff939621cbb1b21898a7b0",
+      "src/components/NesList.tsx": "6f3444e5f992f5208c78005737fe7f0e",
+      "src/components/NesPixelArt.tsx": "9e9e7521e238980f184d01e436255cd2",
+      "src/components/NesProgress.tsx": "e098501d96cd4a11bbfe380ffcfcced5",
+      "src/components/NesSelect.tsx": "19f650daf2d1d6269eae626888eba2b4",
+      "src/components/NesTable.tsx": "3a8481f47fbab4792d64d03c680349e0",
+      "src/components/NesText.tsx": "8292bac709c6920f9922e381964a95f0",
+      "src/index.ts": "8af3f3318682755a930a0695bea4122b",
+      "src/lib/utils.ts": "c752c7e5ba2d28c91396b3df374ff38f",
+      "src/mockup-preview.d.ts": "38969839f35ce2966e32a9f01a5c09ea",
+      "src/routeTree.gen.ts": "c746b72abf9f7e2a977046bba75994ea",
+      "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
+      "src/routes/[__component].preview.$.tsx": "3a40af1fe37daff2e891175a6e6d4f99",
+      "src/routes/[__mockup].preview.$.tsx": "5d9f42470848aa60148f20f9580e240e",
+      "src/routes/__root.tsx": "efa323c68e3bce4c2ffcc7145131e7fc",
+      "src/routes/colors.tsx": "c952794f17302ba477d06c2aae5b4bac",
+      "src/routes/components.tsx": "d536296672697f381ffabee9a0e00121",
+      "src/routes/icons.tsx": "ff0a0e0cd5d56dea1723413115dcda11",
+      "src/routes/index.tsx": "43466ff8cda04e2714ee41f138dd416c",
+      "src/routes/typography.tsx": "a0f3dc72aefc0a22297b186aef0e36f6",
+      "src/showcase/ShowcaseShell.tsx": "11bd331cc99c72782b7dad5a5d78601b",
+      "src/showcase/showcase.css": "bc988b6c6a1748a286eae5caa321ac97",
+      "src/styles.css": "05a20cf3da08be4aad0db0efdecd0fc2",
+      "src/styles/nes.css": "a8e1132f815ab748e16a8f306f3a3dde",
+      "tsconfig.json": "994abf64c2b9f78b568879f80ed0170e",
+      "vite.config.ts": "9f787596cc6f9a2aa3de5a021aed28f3",
+      "wrangler.jsonc": "680b897d48e44bcc65fe437c29b38f3b"
+    },
+    "pipeline_version": 8
+  },
+  "tokens": {},
+  "components": [
+    {
+      "name": "NesButton",
+      "file": "src/components/NesButton",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "default",
+            "primary",
+            "success",
+            "warning",
+            "error"
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "NesBadge",
+      "file": "src/components/NesBadge",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "dark",
+            "primary",
+            "success",
+            "warning",
+            "error"
+          ],
+          "default": "dark"
+        },
+        {
+          "name": "icon",
+          "type": "any"
+        },
+        {
+          "name": "iconVariant",
+          "type": "enum",
+          "values": [
+            "dark",
+            "primary",
+            "success",
+            "warning",
+            "error"
+          ],
+          "default": "dark"
+        }
+      ]
+    },
+    {
+      "name": "NesBalloon",
+      "file": "src/components/NesBalloon",
+      "import_path": "",
+      "props": [
+        {
+          "name": "from",
+          "type": "enum",
+          "values": [
+            "left",
+            "right"
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "name": "NesContainer",
+      "file": "src/components/NesContainer",
+      "import_path": "",
+      "props": [
+        {
+          "name": "title",
+          "type": "any"
+        },
+        {
+          "name": "centered",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "rounded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dark",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesDialog",
+      "file": "src/components/NesDialog",
+      "import_path": "",
+      "props": [
+        {
+          "name": "rounded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dark",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesField",
+      "file": "src/components/NesField",
+      "import_path": "",
+      "props": [
+        {
+          "name": "label",
+          "type": "any",
+          "required": true
+        },
+        {
+          "name": "htmlFor",
+          "type": "string"
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesInput",
+      "file": "src/components/NesInput",
+      "import_path": "",
+      "props": [
+        {
+          "name": "state",
+          "type": "enum",
+          "values": [
+            "success",
+            "warning",
+            "error"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NesTextarea",
+      "file": "src/components/NesInput",
+      "import_path": "",
+      "props": [
+        {
+          "name": "state",
+          "type": "enum",
+          "values": [
+            "success",
+            "warning",
+            "error"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NesCheckbox",
+      "file": "src/components/NesCheckbox",
+      "import_path": "",
+      "props": [
+        {
+          "name": "label",
+          "type": "any",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "NesRadio",
+      "file": "src/components/NesCheckbox",
+      "import_path": "",
+      "props": [
+        {
+          "name": "label",
+          "type": "any",
+          "required": true
+        },
+        {
+          "name": "dark",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesSelect",
+      "file": "src/components/NesSelect",
+      "import_path": "",
+      "props": [
+        {
+          "name": "state",
+          "type": "enum",
+          "values": [
+            "success",
+            "warning",
+            "error"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NesList",
+      "file": "src/components/NesList",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "disc",
+            "circle"
+          ],
+          "default": "disc"
+        }
+      ]
+    },
+    {
+      "name": "NesProgress",
+      "file": "src/components/NesProgress",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "default",
+            "primary",
+            "success",
+            "warning",
+            "error",
+            "pattern"
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "NesTable",
+      "file": "src/components/NesTable",
+      "import_path": "",
+      "props": [
+        {
+          "name": "bordered",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "centered",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dark",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "responsive",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesText",
+      "file": "src/components/NesText",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "primary",
+            "success",
+            "warning",
+            "error",
+            "disabled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NesAvatar",
+      "file": "src/components/NesAvatar",
+      "import_path": "",
+      "props": [
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        {
+          "name": "rounded",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesIcon",
+      "file": "src/components/NesIcon",
+      "import_path": "",
+      "props": [
+        {
+          "name": "name",
+          "type": "enum",
+          "values": [
+            "heart",
+            "star",
+            "coin",
+            "trophy",
+            "close",
+            "like",
+            "twitter",
+            "facebook",
+            "github",
+            "google",
+            "gmail",
+            "medium",
+            "linkedin",
+            "instagram",
+            "whatsapp",
+            "youtube",
+            "reddit",
+            "twitch"
+          ],
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        {
+          "name": "empty",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "NesPixelArt",
+      "file": "src/components/NesPixelArt",
+      "import_path": "",
+      "props": [
+        {
+          "name": "name",
+          "type": "enum",
+          "values": [
+            "mario",
+            "kirby",
+            "ash",
+            "pokeball",
+            "bulbasaur",
+            "charmander",
+            "squirtle",
+            "octocat",
+            "bcrikko",
+            "phone",
+            "smartphone",
+            "nes-icon",
+            "jp-icon",
+            "logo",
+            "jp-logo"
+          ],
+          "required": true
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "src/assets/cursors/cursor-click.png",
+      "kind": "image",
+      "format": "png"
+    },
+    {
+      "file": "src/assets/cursors/cursor.png",
+      "kind": "image",
+      "format": "png"
+    }
+  ]
+}
