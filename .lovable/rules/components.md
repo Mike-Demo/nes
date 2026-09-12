@@ -144,6 +144,7 @@ import { NesList } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d
 | Prop | Type | Default |
 |---|---|---|
 | `variant` | disc · circle | `disc` |
+| `dark` | boolean | `false` |
 
 ### NesPixelArt
 
