@@ -22,7 +22,7 @@ export const NesBadge = forwardRef<HTMLAnchorElement, NesBadgeProps>(function Ne
   ref,
 ) {
   return (
-    <a ref={ref} className={cn("nes-badge", icon && "is-icon", className)} {...props}>
+    <a ref={ref} className={cn("nes-badge", icon ? "is-icon" : false, className)} {...props}>
       {icon ? <span className={cn("is-icon", `is-${iconVariant}`)}>{icon}</span> : null}
       <span className={`is-${variant}`}>{children}</span>
     </a>
