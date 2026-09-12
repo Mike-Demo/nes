@@ -1,0 +1,142 @@
+.showcase-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.showcase-nav {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: 4px solid #212529;
+  background: #fff;
+  padding: 24px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.showcase-nav .brand {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #212529;
+  text-decoration: none;
+}
+
+.showcase-nav a.nav-link {
+  display: block;
+  padding: 8px 8px;
+  color: #212529;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.showcase-nav a.nav-link.active,
+.showcase-nav a.nav-link:hover {
+  color: #209cee;
+}
+
+.showcase-main {
+  flex: 1;
+  padding: 40px 48px 96px;
+  max-width: 1080px;
+}
+
+.showcase-main h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.showcase-main .lede {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
+
+.showcase-section {
+  margin-bottom: 48px;
+}
+
+.showcase-section h2 {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.showcase-caption {
+  display: block;
+  font-size: 9px;
+  color: #787878;
+  margin-top: 8px;
+}
+
+.specimen-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.specimen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.swatch-box {
+  height: 72px;
+  border: 4px solid #212529;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 32px 16px;
+}
+
+.icon-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+pre.snippet {
+  background: #212529;
+  color: #92cc41;
+  padding: 16px;
+  font-size: 9px;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.search-field {
+  max-width: 320px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 800px) {
+  .showcase-shell {
+    flex-direction: column;
+  }
+  .showcase-nav {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 4px solid #212529;
+  }
+  .showcase-main {
+    padding: 24px 16px 64px;
+  }
+}
