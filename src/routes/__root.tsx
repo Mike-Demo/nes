@@ -10,6 +10,53 @@ import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
 import nesCss from "../styles/nes.css?url";
 
+const initialRevealStyles = `
+  html.app-cloak body {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  html.app-ready body {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.app-ready body {
+      transition: opacity 160ms ease-out;
+    }
+  }
+`;
+
+const initialRevealScript = `
+  (() => {
+    const root = document.documentElement;
+    let shown = false;
+    const show = () => {
+      if (shown) return;
+      shown = true;
+      root.classList.remove("app-cloak");
+      root.classList.add("app-ready");
+    };
+
+    const timeout = window.setTimeout(show, 2000);
+    const done = () => {
+      window.clearTimeout(timeout);
+      window.requestAnimationFrame(show);
+    };
+
+    if (document.readyState === "complete") {
+      done();
+    } else {
+      window.addEventListener("load", done, { once: true });
+    }
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(done, done);
+    }
+  })();
+`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -40,9 +87,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="app-cloak" suppressHydrationWarning>
       <head>
+        <style dangerouslySetInnerHTML={{ __html: initialRevealStyles }} />
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: initialRevealScript }} />
       </head>
       <body>
         {children}
