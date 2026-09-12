@@ -1,21 +1,15 @@
-# Custom design system (TanStack Start)
+# NES.css Design System + Lovable Patterns
 
-A deliberately bare [TanStack Start](https://tanstack.com/start) + React starter
-for building a design system from scratch. No CSS framework, no component
-library, no theme tokens — just a router, a blank page, and a plain-CSS reset.
-Bring your own styling approach.
+This repository hosts a live React design system built on NES.css primitives,
+including Lovable-oriented AI product patterns combined from
+https://github.com/Mike-Demo/nes.css.
 
-## What's (intentionally) not here
+## Included
 
-- No Tailwind, no PostCSS, no `components.json`
-- No shadcn/ui or Radix primitives
-- No theme tokens or design system — `src/styles.css` is a minimal reset
-
-## Stack
-
-- TanStack Start + TanStack Router (file-based routing under `src/routes/`)
-- React 19 + TypeScript
-- TanStack Query, Zod, Recharts, date-fns
+- NES.css base stylesheet (`src/styles/nes.css`) and cursor assets
+- Typed React wrappers for NES.css component classes (`src/components/*`)
+- Live showcase routes for foundations, components, and Lovable patterns
+- Lovable metadata for extraction/publishing in `.lovable/*`
 
 ## Develop
 
