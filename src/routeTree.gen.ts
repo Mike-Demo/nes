@@ -9,27 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TypographyRouteImport } from './routes/typography'
-import { Route as IconsRouteImport } from './routes/icons'
-import { Route as ComponentsRouteImport } from './routes/components'
-import { Route as ColorsRouteImport } from './routes/colors'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
+import { Route as ColorsRouteImport } from './routes/colors'
+import { Route as ComponentsRouteImport } from './routes/components'
+import { Route as IconsRouteImport } from './routes/icons'
+import { Route as LovableRouteImport } from './routes/lovable'
+import { Route as TypographyRouteImport } from './routes/typography'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
+import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 
-const TypographyRoute = TypographyRouteImport.update({
-  id: '/typography',
-  path: '/typography',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IconsRoute = IconsRouteImport.update({
-  id: '/icons',
-  path: '/icons',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComponentsRoute = ComponentsRouteImport.update({
-  id: '/components',
-  path: '/components',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ColorsRoute = ColorsRouteImport.update({
@@ -37,21 +28,36 @@ const ColorsRoute = ColorsRouteImport.update({
   path: '/colors',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ComponentsRoute = ComponentsRouteImport.update({
+  id: '/components',
+  path: '/components',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Char91__mockupChar93PreviewSplatRoute =
-  Char91__mockupChar93PreviewSplatRouteImport.update({
-    id: '/__mockup/preview/$',
-    path: '/__mockup/preview/$',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const IconsRoute = IconsRouteImport.update({
+  id: '/icons',
+  path: '/icons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableRoute = LovableRouteImport.update({
+  id: '/lovable',
+  path: '/lovable',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TypographyRoute = TypographyRouteImport.update({
+  id: '/typography',
+  path: '/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91__componentChar93PreviewSplatRoute =
   Char91__componentChar93PreviewSplatRouteImport.update({
     id: '/__component/preview/$',
     path: '/__component/preview/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91__mockupChar93PreviewSplatRoute =
+  Char91__mockupChar93PreviewSplatRouteImport.update({
+    id: '/__mockup/preview/$',
+    path: '/__mockup/preview/$',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
   IconsRoute: typeof IconsRoute
+  LovableRoute: typeof LovableRoute
   TypographyRoute: typeof TypographyRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
   Char91__mockupChar93PreviewSplatRoute: typeof Char91__mockupChar93PreviewSplatRoute
@@ -125,25 +138,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/typography': {
-      id: '/typography'
-      path: '/typography'
-      fullPath: '/typography'
-      preLoaderRoute: typeof TypographyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/icons': {
-      id: '/icons'
-      path: '/icons'
-      fullPath: '/icons'
-      preLoaderRoute: typeof IconsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/components': {
-      id: '/components'
-      path: '/components'
-      fullPath: '/components'
-      preLoaderRoute: typeof ComponentsRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/colors': {
@@ -153,18 +152,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/components': {
+      id: '/components'
+      path: '/components'
+      fullPath: '/components'
+      preLoaderRoute: typeof ComponentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/__mockup/preview/$': {
-      id: '/__mockup/preview/$'
-      path: '/__mockup/preview/$'
-      fullPath: '/__mockup/preview/$'
-      preLoaderRoute: typeof Char91__mockupChar93PreviewSplatRouteImport
+    '/icons': {
+      id: '/icons'
+      path: '/icons'
+      fullPath: '/icons'
+      preLoaderRoute: typeof IconsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable': {
+      id: '/lovable'
+      path: '/lovable'
+      fullPath: '/lovable'
+      preLoaderRoute: typeof LovableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/typography': {
+      id: '/typography'
+      path: '/typography'
+      fullPath: '/typography'
+      preLoaderRoute: typeof TypographyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/__component/preview/$': {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       path: '/__component/preview/$'
       fullPath: '/__component/preview/$'
       preLoaderRoute: typeof Char91__componentChar93PreviewSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/__mockup/preview/$': {
+      id: '/__mockup/preview/$'
+      path: '/__mockup/preview/$'
+      fullPath: '/__mockup/preview/$'
+      preLoaderRoute: typeof Char91__mockupChar93PreviewSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
   IconsRoute: IconsRoute,
+  LovableRoute: LovableRoute,
   TypographyRoute: TypographyRoute,
   Char91__componentChar93PreviewSplatRoute:
     Char91__componentChar93PreviewSplatRoute,

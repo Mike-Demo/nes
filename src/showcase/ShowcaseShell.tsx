@@ -5,6 +5,7 @@ import "./showcase.css";
 
 const NAV = [
   { to: "/", label: "Overview" },
+  { to: "/lovable", label: "Lovable patterns" },
   { to: "/colors", label: "Colors" },
   { to: "/typography", label: "Typography" },
   { to: "/icons", label: "Iconography" },
