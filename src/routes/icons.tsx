@@ -27,7 +27,7 @@ const ICONS: NesIconName[] = [
 const SPRITES: NesPixelArtName[] = [
   "mario", "kirby", "ash", "pokeball", "bulbasaur", "charmander",
   "squirtle", "octocat", "bcrikko", "phone", "smartphone",
-  "nes-icon", "jp-icon", "logo", "jp-logo",
+  "logo", "jp-logo",
 ];
 
 function IconsPage() {

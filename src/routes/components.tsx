@@ -171,8 +171,8 @@ function ComponentsPage() {
               <p>PAUSED</p>
               <p>Take a break, player 1?</p>
               <menu style={{ display: "flex", gap: 16, padding: 0 }}>
-                <NesButton>Resume</NesButton>
-                <NesButton variant="primary">Confirm</NesButton>
+                <NesButton type="submit">Resume</NesButton>
+                <NesButton type="submit" variant="primary">Confirm</NesButton>
               </menu>
             </form>
           </NesDialog>

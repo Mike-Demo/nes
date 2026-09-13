@@ -14,8 +14,6 @@ export type NesPixelArtName =
   | "bcrikko"
   | "phone"
   | "smartphone"
-  | "nes-icon"
-  | "jp-icon"
   | "logo"
   | "jp-logo";
 
@@ -32,7 +30,6 @@ export const NesPixelArt = forwardRef<HTMLElement, NesPixelArtProps>(function Ne
   { name, className, ...props },
   ref,
 ) {
-  const cls = name === "nes-icon" || name === "jp-icon" || name === "logo" || name === "jp-logo" ? `nes-${name}` : `nes-${name}`;
   return (
     <i
       ref={ref}
