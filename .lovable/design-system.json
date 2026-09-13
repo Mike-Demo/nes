@@ -462,6 +462,46 @@
           "required": true
         }
       ]
+    },
+    {
+      "name": "NesRuneIcon",
+      "file": "src/components/NesRuneIcon",
+      "import_path": "",
+      "props": [
+        {
+          "name": "name",
+          "type": "enum",
+          "values": [
+            "see RUNE_ICONS — 215 rune glyph names"
+          ],
+          "default": ""
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "default": "medium"
+        }
+      ],
+      "usage": "Pixel rune glyph from the Rune Icons set (215 icons). Reaches beyond the small NES-native NesIcon set; fills with currentColor so it follows text color.",
+      "examples": [
+        {
+          "label": "Basic",
+          "code": "<NesRuneIcon name=\"star\" size=\"medium\" />"
+        },
+        {
+          "label": "Colored via text",
+          "code": "<NesText variant=\"error\"><NesRuneIcon name=\"heart\" size=\"small\" /> 3</NesText>"
+        }
+      ],
+      "antipatterns": [
+        "Do not set fill or color via inline style — color it through text color.",
+        "Do not use for heart/star/coin/social icons that NesIcon already provides natively."
+      ]
     }
   ],
   "assets": [

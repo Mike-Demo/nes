@@ -14,6 +14,7 @@ import { NesIcon } from "../components/NesIcon";
 import { NesInput, NesTextarea } from "../components/NesInput";
 import { NesList } from "../components/NesList";
 import { NesPixelArt } from "../components/NesPixelArt";
+import { NesRuneIcon } from "../components/NesRuneIcon";
 import { NesProgress } from "../components/NesProgress";
 import { NesSelect } from "../components/NesSelect";
 import { NesTable } from "../components/NesTable";
@@ -35,7 +36,7 @@ const SECTIONS = [
   "NesButton", "NesBadge", "NesBalloon", "NesContainer", "NesDialog",
   "NesField", "NesInput", "NesTextarea", "NesCheckbox", "NesRadio",
   "NesSelect", "NesList", "NesProgress", "NesTable", "NesText",
-  "NesAvatar", "NesIcon", "NesPixelArt",
+  "NesAvatar", "NesIcon", "NesPixelArt", "NesRuneIcon",
 ] as const;
 
 function Snippet({ code }: { code: string }) {
@@ -393,6 +394,21 @@ function ComponentsPage() {
           </div>
           <span className="showcase-caption">See the Iconography page for the full set</span>
           <Snippet code={`<NesPixelArt name="mario" />`} />
+        </Section>
+      )}
+
+      {show("NesRuneIcon") && (
+        <Section id="NesRuneIcon">
+          <div className="specimen-row" style={{ alignItems: "center" }}>
+            <NesRuneIcon name="star" size="small" />
+            <NesRuneIcon name="star" size="medium" />
+            <NesRuneIcon name="star" size="large" />
+            <NesText variant="error">
+              <NesRuneIcon name="heart" size="small" /> inherits text color
+            </NesText>
+          </div>
+          <span className="showcase-caption">215 rune glyphs — see the Iconography page for the full set</span>
+          <Snippet code={`<NesRuneIcon name="star" size="medium" />`} />
         </Section>
       )}
     </ShowcaseShell>
