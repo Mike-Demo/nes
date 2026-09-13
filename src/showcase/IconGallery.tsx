@@ -153,9 +153,9 @@ export function IconGallery() {
         <div className="search-field">
           <NesInput aria-label="Filter icons" placeholder="Filter icons..." value={query} onChange={(e) => setQuery(e.target.value)} />
         </div>
-        <div className="gallery-tabs" role="tablist" aria-label="Icon sets">
+        <div className="gallery-tabs" role="group" aria-label="Icon sets">
           {counts.map((t) => (
-            <NesButton key={t.id} role="tab" aria-selected={tab === t.id} variant={tab === t.id ? "primary" : "default"} onClick={() => setTab(t.id)}>
+            <NesButton key={t.id} aria-pressed={tab === t.id} variant={tab === t.id ? "primary" : "default"} onClick={() => setTab(t.id)}>
               {t.label} ({t.count})
             </NesButton>
           ))}

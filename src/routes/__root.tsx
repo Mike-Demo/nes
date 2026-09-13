@@ -9,6 +9,7 @@ import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import nesCss from "../styles/nes.css?url";
+import { NesProvider } from "../lib/NesProvider";
 
 const initialRevealStyles = `
   html.app-cloak body {
@@ -122,8 +123,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      {/* NesProvider is how consumers wire the font + palette; the showcase uses it too. */}
+      <NesProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </NesProvider>
     </QueryClientProvider>
   );
 }

@@ -13,11 +13,15 @@ const NAV = [
   { to: "/components", label: "Components" },
   { to: "/specs", label: "Component specs" },
   { to: "/studio", label: "Icon studio" },
+  { to: "/accessibility", label: "Accessibility" },
 ] as const;
 
 export function ShowcaseShell({ children }: { children: ReactNode }) {
   return (
     <div className="showcase-shell">
+      <a className="skip-link" href="#showcase-main">
+        Skip to content
+      </a>
       <nav className="showcase-nav" aria-label="Showcase">
         <Link to="/" className="brand">
           NES.CSS
@@ -39,7 +43,9 @@ export function ShowcaseShell({ children }: { children: ReactNode }) {
           <ThemeToggle />
         </div>
       </nav>
-      <main className="showcase-main">{children}</main>
+      <main id="showcase-main" className="showcase-main" tabIndex={-1}>
+        {children}
+      </main>
     </div>
   );
 }
