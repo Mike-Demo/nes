@@ -16,4 +16,6 @@ export { NesText, type NesTextProps, type NesTextVariant } from "./components/Ne
 export { NesAvatar, type NesAvatarProps } from "./components/NesAvatar";
 export { NesIcon, type NesIconProps, type NesIconName } from "./components/NesIcon";
 export { NesPixelArt, type NesPixelArtProps, type NesPixelArtName } from "./components/NesPixelArt";
+export { NesRuneIcon, type NesRuneIconProps, type NesRuneIconSize, type RuneIconName } from "./components/NesRuneIcon";
+export { RUNE_ICONS } from "./components/runes";
 export { cn } from "./lib/utils";
