@@ -18,4 +18,15 @@ export { NesIcon, type NesIconProps, type NesIconName } from "./components/NesIc
 export { NesPixelArt, type NesPixelArtProps, type NesPixelArtName } from "./components/NesPixelArt";
 export { NesRuneIcon, type NesRuneIconProps, type NesRuneIconSize, type RuneIconName } from "./components/NesRuneIcon";
 export { RUNE_ICONS } from "./components/runes";
+export { NesPixelIcon, type NesPixelIconProps, type NesPixelIconSize } from "./components/NesPixelIcon";
+export {
+  TRANSPARENT,
+  createEmptyGrid,
+  pixelIconToRects,
+  pixelIconToSvg,
+  isPixelIconData,
+  type PixelIconData,
+  type PixelGridSize,
+  type PixelRect,
+} from "./components/pixel-icon";
 export { cn } from "./lib/utils";
