@@ -60,6 +60,25 @@ const FONT_ROWS: SpecRow[] = [
 
 const SEMANTIC_VARIANTS = ["primary", "success", "warning", "error"] as const;
 
+const FIELD_STATES = ["success", "warning", "error"] as const;
+
+const SAMPLE_TABLE = (
+  <>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Potion</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+  </>
+);
+
 const variantColorRows = (prefix: string): SpecRow[] =>
   SEMANTIC_VARIANTS.flatMap((v) => [
     { label: `${prefix} ${v} fill`, value: v, token: `--nes-${v}` },
