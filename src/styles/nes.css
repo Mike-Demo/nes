@@ -7,6 +7,57 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* NES.css design tokens.
+   Every semantic color below is read by the framework rules via var(--nes-*).
+   Switch palettes by setting data-nes-theme="fresh" on <html>. Pixel-art icons
+   and sprites keep their drawn colors in every theme. */
+:root,
+[data-nes-theme="retro"] {
+  --nes-primary: #209cee;
+  --nes-primary-hover: #108de0;
+  --nes-primary-shadow: #006bb3;
+  --nes-success: #92cc41;
+  --nes-success-hover: #76c442;
+  --nes-success-shadow: #4aa52e;
+  --nes-warning: #f7d51d;
+  --nes-warning-hover: #f2c409;
+  --nes-warning-shadow: #e59400;
+  --nes-error: #e76e55;
+  --nes-error-hover: #ce372b;
+  --nes-error-shadow: #8c2022;
+  --nes-dark: #212529;
+  --nes-bg: #ffffff;
+  --nes-surface: #f7f7f7;
+  --nes-hover: #e7e7e7;
+  --nes-shadow: #adafbc;
+  --nes-disabled: #d3d3d3;
+}
+
+[data-nes-theme="fresh"] {
+  --nes-primary: #5b5bd6;
+  --nes-primary-hover: #4a4ac4;
+  --nes-primary-shadow: #3b3b9e;
+  --nes-success: #3fb98a;
+  --nes-success-hover: #33a377;
+  --nes-success-shadow: #257a58;
+  --nes-warning: #f2b134;
+  --nes-warning-hover: #e0a025;
+  --nes-warning-shadow: #b57a12;
+  --nes-error: #ef6f6c;
+  --nes-error-hover: #dd5754;
+  --nes-error-shadow: #a83a38;
+  --nes-dark: #212529;
+  --nes-bg: #fafaf7;
+  --nes-surface: #f1f1ec;
+  --nes-hover: #e9e9e2;
+  --nes-shadow: #c9cbd6;
+  --nes-disabled: #dcdcd4;
+}
+
+[data-nes-theme] body {
+  background-color: var(--nes-bg);
+}
+
 /*!***************************************************************************\
   NES.css Framework
   Version: development
