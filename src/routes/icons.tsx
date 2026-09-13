@@ -5,6 +5,8 @@ import { ShowcaseShell } from "../showcase/ShowcaseShell";
 import { NesIcon, type NesIconName } from "../components/NesIcon";
 import { NesPixelArt, type NesPixelArtName } from "../components/NesPixelArt";
 import { NesInput } from "../components/NesInput";
+import { NesRuneIcon } from "../components/NesRuneIcon";
+import { RUNE_ICONS, type RuneIconName } from "../components/runes";
 
 export const Route = createFileRoute("/icons")({
   head: () => ({
@@ -30,11 +32,25 @@ const SPRITES: NesPixelArtName[] = [
   "logo", "jp-logo",
 ];
 
+const RUNE_NAMES = Object.keys(RUNE_ICONS) as RuneIconName[];
+
+function groupByCategory(names: RuneIconName[]): [string, RuneIconName[]][] {
+  const groups = new Map<string, RuneIconName[]>();
+  for (const name of names) {
+    const category = RUNE_ICONS[name].category;
+    const list = groups.get(category) ?? [];
+    list.push(name);
+    groups.set(category, list);
+  }
+  return [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+}
+
 function IconsPage() {
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
   const icons = ICONS.filter((n) => n.includes(q));
   const sprites = SPRITES.filter((n) => n.includes(q));
+  const runes = groupByCategory(RUNE_NAMES.filter((n) => n.includes(q)));
 
   return (
     <ShowcaseShell>
@@ -91,6 +107,35 @@ function IconsPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="showcase-section">
+        <h2>Rune icons</h2>
+        <p className="lede">
+          215 pixel glyphs from the Rune Icons set. NesRuneIcon fills with
+          currentColor and scales via the size prop.
+        </p>
+        <div className="specimen-row" style={{ alignItems: "center" }}>
+          {(["small", "medium", "large"] as const).map((size) => (
+            <div key={size} className="specimen" style={{ alignItems: "center" }}>
+              <NesRuneIcon name="sword" size={size} />
+              <span className="showcase-caption">size="{size}"</span>
+            </div>
+          ))}
+        </div>
+        {runes.map(([category, names]) => (
+          <div key={category}>
+            <h3>{category}</h3>
+            <div className="icon-grid">
+              {names.map((name) => (
+                <div key={name} className="icon-cell">
+                  <NesRuneIcon name={name} />
+                  <span className="showcase-caption">{name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </ShowcaseShell>
   );
