@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 
 import { ShowcaseShell } from "../showcase/ShowcaseShell";
+import { SPEC_NAMES } from "../showcase/specs";
 import { NesAvatar } from "../components/NesAvatar";
 import { NesBadge } from "../components/NesBadge";
 import { NesBalloon } from "../components/NesBalloon";
@@ -44,9 +45,17 @@ function Snippet({ code }: { code: string }) {
 }
 
 function Section({ id, children }: { id: string; children: React.ReactNode }) {
+  const hasSpec = SPEC_NAMES.includes(id);
   return (
     <section id={id} className="showcase-section">
-      <h2>{id}</h2>
+      <div className="component-header">
+        <h2>{id}</h2>
+        {hasSpec ? (
+          <Link to="/specs/$name" params={{ name: id }} className="spec-link">
+            View spec →
+          </Link>
+        ) : null}
+      </div>
       {children}
     </section>
   );

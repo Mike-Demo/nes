@@ -17,6 +17,8 @@ import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SpecsIndexRouteImport } from './routes/specs.index'
+import { Route as SpecsNameRouteImport } from './routes/specs.$name'
 import { Route as ApiGeneratePixelIconRouteImport } from './routes/api/generate-pixel-icon'
 import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
@@ -61,6 +63,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SpecsIndexRoute = SpecsIndexRouteImport.update({
+  id: '/specs/',
+  path: '/specs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpecsNameRoute = SpecsNameRouteImport.update({
+  id: '/specs/$name',
+  path: '/specs/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiGeneratePixelIconRoute = ApiGeneratePixelIconRouteImport.update({
   id: '/api/generate-pixel-icon',
   path: '/api/generate-pixel-icon',
@@ -89,6 +101,8 @@ export interface FileRoutesByFullPath {
   '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs/': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -102,6 +116,8 @@ export interface FileRoutesByTo {
   '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -116,6 +132,8 @@ export interface FileRoutesById {
   '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs/': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -131,6 +149,8 @@ export interface FileRouteTypes {
     | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs/'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesByTo: FileRoutesByTo
@@ -144,6 +164,8 @@ export interface FileRouteTypes {
     | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   id:
@@ -157,6 +179,8 @@ export interface FileRouteTypes {
     | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs/'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesById: FileRoutesById
@@ -171,6 +195,8 @@ export interface RootRouteChildren {
   StudioRoute: typeof StudioRoute
   TypographyRoute: typeof TypographyRoute
   ApiGeneratePixelIconRoute: typeof ApiGeneratePixelIconRoute
+  SpecsNameRoute: typeof SpecsNameRoute
+  SpecsIndexRoute: typeof SpecsIndexRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
   Char91__mockupChar93PreviewSplatRoute: typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -233,6 +259,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/specs/': {
+      id: '/specs/'
+      path: '/specs'
+      fullPath: '/specs/'
+      preLoaderRoute: typeof SpecsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/specs/$name': {
+      id: '/specs/$name'
+      path: '/specs/$name'
+      fullPath: '/specs/$name'
+      preLoaderRoute: typeof SpecsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/generate-pixel-icon': {
       id: '/api/generate-pixel-icon'
       path: '/api/generate-pixel-icon'
@@ -267,6 +307,8 @@ const rootRouteChildren: RootRouteChildren = {
   StudioRoute: StudioRoute,
   TypographyRoute: TypographyRoute,
   ApiGeneratePixelIconRoute: ApiGeneratePixelIconRoute,
+  SpecsNameRoute: SpecsNameRoute,
+  SpecsIndexRoute: SpecsIndexRoute,
   Char91__componentChar93PreviewSplatRoute:
     Char91__componentChar93PreviewSplatRoute,
   Char91__mockupChar93PreviewSplatRoute: Char91__mockupChar93PreviewSplatRoute,
