@@ -31,3 +31,4 @@ export {
 } from "./components/pixel-icon";
 export { cn } from "./lib/utils";
 export { useNesTheme, applyTheme, NES_THEMES, type NesTheme } from "./lib/theme";
+export { NesProvider, type NesProviderProps } from "./lib/NesProvider";
