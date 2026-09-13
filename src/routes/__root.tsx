@@ -92,6 +92,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <style dangerouslySetInnerHTML={{ __html: initialRevealStyles }} />
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: initialRevealScript }} />
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body>
         {children}
