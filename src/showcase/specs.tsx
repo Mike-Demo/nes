@@ -185,13 +185,10 @@ export const COMPONENT_SPECS: Record<string, ComponentSpec> = {
     states: [
       { label: "from left", render: () => <NesBalloon from="left"><p>Hello!</p></NesBalloon> },
       { label: "from right", render: () => <NesBalloon from="right"><p>Hi!</p></NesBalloon> },
-      { label: "dark", render: () => <NesBalloon from="left" dark><p>Boo.</p></NesBalloon> },
     ],
-    accessibility: ["Plain content — keep sentences short so Press Start 2P stays legible.", "Use rounded for a softer edge; never add CSS border-radius."],
+    accessibility: ["Plain content — keep sentences short so Press Start 2P stays legible.", "Never add CSS border-radius; the frame is a pixel border."],
     props: [
       { name: "from", type: '"left" | "right"', defaultValue: '"left"', description: "Tail side." },
-      { name: "dark", type: "boolean", defaultValue: "false", description: "Inverted colors." },
-      { name: "rounded", type: "boolean", defaultValue: "false", description: "Rounded pixel corners." },
       ...COMMON_PROPS,
     ],
     snippet: `<NesBalloon from="left"><p>It's dangerous to go alone!</p></NesBalloon>`,
