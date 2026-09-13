@@ -118,7 +118,7 @@ function IconsPage() {
         <div className="specimen-row" style={{ alignItems: "center" }}>
           {(["small", "medium", "large"] as const).map((size) => (
             <div key={size} className="specimen" style={{ alignItems: "center" }}>
-              <NesRuneIcon name="swords" size={size} />
+              <NesRuneIcon name="star" size={size} />
               <span className="showcase-caption">size="{size}"</span>
             </div>
           ))}
