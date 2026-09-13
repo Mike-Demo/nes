@@ -600,8 +600,8 @@ export const COMPONENT_SPECS: Record<string, ComponentSpec> = {
       { name: "size", type: '"small" | "medium" | "large"', defaultValue: '"medium"', description: "Fixed size." },
       ...COMMON_PROPS,
     ],
-    snippet: `<NesRuneIcon name="battery" size="small" />`,
-    example: () => <NesRuneIcon name="battery" size="large" />,
+    snippet: `<NesRuneIcon name="battery-full" size="small" />`,
+    example: () => <NesRuneIcon name="battery-full" size="large" />,
   },
 
   NesPixelIcon: {
