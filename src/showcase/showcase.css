@@ -82,8 +82,8 @@
 .showcase-main .lede {
   font-size: 11px;
   line-height: 1.8;
-  color: var(--nes-dark);
-  opacity: 0.75;
+  /* No opacity: it would dim nested links below the contrast minimum. */
+  color: var(--nes-muted-text);
   margin-bottom: 40px;
 }
 
