@@ -57,6 +57,19 @@ const initialRevealScript = `
   })();
 `;
 
+// Applies the persisted NES theme before first paint so the showcase never
+// flashes the wrong palette. The key mirrors src/showcase/theme.ts.
+const themeBootScript = `
+  (() => {
+    try {
+      const theme = window.localStorage.getItem("nes-theme");
+      if (theme === "fresh" || theme === "retro") {
+        document.documentElement.setAttribute("data-nes-theme", theme);
+      }
+    } catch {}
+  })();
+`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
