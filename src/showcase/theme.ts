@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
 export type NesTheme = "retro" | "fresh";
 
@@ -15,6 +15,15 @@ function readTheme(): NesTheme {
   return isNesTheme(attr) ? attr : "retro";
 }
 
+const listeners = new Set<() => void>();
+
+function subscribe(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
 export function applyTheme(theme: NesTheme): void {
   document.documentElement.setAttribute("data-nes-theme", theme);
   try {
@@ -22,19 +31,14 @@ export function applyTheme(theme: NesTheme): void {
   } catch {
     // Storage may be unavailable (private mode); the attribute still applies.
   }
+  for (const listener of listeners) listener();
 }
 
 /** Showcase-only hook: reads and switches the active NES palette. */
 export function useNesTheme(): [NesTheme, (theme: NesTheme) => void] {
-  const [theme, setThemeState] = useState<NesTheme>("retro");
-
-  useEffect(() => {
-    setThemeState(readTheme());
-  }, []);
-
+  const theme = useSyncExternalStore<NesTheme>(subscribe, readTheme, () => "retro");
   const setTheme = useCallback((next: NesTheme) => {
     applyTheme(next);
-    setThemeState(next);
   }, []);
 
   return [theme, setTheme];
