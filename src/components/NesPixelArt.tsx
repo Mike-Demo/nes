@@ -34,7 +34,7 @@ export const NesPixelArt = forwardRef<HTMLElement, NesPixelArtProps>(function Ne
     <i
       ref={ref}
       aria-hidden={props["aria-label"] ? undefined : true}
-      className={cn(cls, className)}
+      className={cn(`nes-${name}`, className)}
       {...props}
     />
   );
