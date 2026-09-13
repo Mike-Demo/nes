@@ -190,10 +190,10 @@ export function boxShadowToGrid(
 }
 
 /** Palette indexes actually used by a grid, so saved icons only store what they need. */
-export function compactPalette(grid: Grid, palette: readonly string[]): PixelIconData["palette"] & { remap: Grid } {
+export function compactPalette(grid: Grid, palette: readonly string[]): Pick<PixelIconData, "palette" | "pixels"> {
   const used = new Map<number, number>();
   const next: string[] = [];
-  const remap = grid.map((row) =>
+  const pixels = grid.map((row) =>
     row.map((cell) => {
       if (cell === TRANSPARENT || palette[cell] === undefined) return TRANSPARENT;
       let mapped = used.get(cell);
@@ -205,5 +205,5 @@ export function compactPalette(grid: Grid, palette: readonly string[]): PixelIco
       return mapped;
     }),
   );
-  return Object.assign(next, { remap });
+  return { palette: next, pixels };
 }
