@@ -354,6 +354,8 @@ details.snippet-details summary {
 .spec-link {
   font-size: 9px;
   color: var(--nes-primary-text);
+  /* Underlined so the link is not identified by color alone in running text. */
+  text-decoration: underline;
 }
 
 /* Spec pages */
@@ -436,10 +438,10 @@ details.snippet-details summary {
 
 /* Forced states for the spec pages */
 .force-hover.nes-btn { background-color: var(--nes-hover); }
-.force-hover.nes-btn.is-primary { background-color: var(--nes-primary-hover); }
-.force-hover.nes-btn.is-success { background-color: var(--nes-success-hover); }
+.force-hover.nes-btn.is-primary { background-color: color-mix(in srgb, var(--nes-primary-text) 85%, #000); }
+.force-hover.nes-btn.is-success { background-color: color-mix(in srgb, var(--nes-success-text) 85%, #000); }
 .force-hover.nes-btn.is-warning { background-color: var(--nes-warning-hover); }
-.force-hover.nes-btn.is-error { background-color: var(--nes-error-hover); }
+.force-hover.nes-btn.is-error { background-color: color-mix(in srgb, var(--nes-error-text) 85%, #000); }
 .force-hover.nes-btn::after { box-shadow: inset -6px -6px var(--nes-shadow); }
 .force-hover.nes-btn.is-primary::after { box-shadow: inset -6px -6px var(--nes-primary-shadow); }
 .force-hover.nes-btn.is-success::after { box-shadow: inset -6px -6px var(--nes-success-shadow); }
