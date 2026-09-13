@@ -326,7 +326,7 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
           Cursor {cursor.x},{cursor.y} · Tool: {tool} · Shortcuts: P / E / F, Ctrl+Z, Ctrl+Shift+Z
         </span>
 
-        <div className="showcase-section" style={{ marginTop: 32 }}>
+        <div className="showcase-section mt-8">
           <h3>Preview</h3>
           <div className="studio-preview-row">
             <div className="specimen is-centered">
@@ -408,7 +408,7 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
               </NesButton>
             ))}
           </div>
-          <i ref={sampleRef} aria-hidden style={{ position: "absolute", left: -9999, top: 0 }} />
+          <i ref={sampleRef} aria-hidden className="studio-sample" />
         </NesContainer>
 
         <NesContainer title="AI generate">
@@ -421,7 +421,7 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
               onChange={(e) => setPrompt(e.target.value)}
             />
           </NesField>
-          <div className="studio-preview-row" style={{ marginTop: 16 }}>
+          <div className="studio-preview-row mt-4">
             <NesButton variant="primary" onClick={() => void generate()} disabled={busy !== "idle"}>
               {busy === "generating" ? "Working…" : "Generate"}
             </NesButton>
@@ -443,7 +443,7 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
               <NesField label="Icon name" htmlFor="icon-name">
                 <NesInput id="icon-name" value={name} maxLength={40} placeholder="potion" onChange={(e) => setName(e.target.value)} />
               </NesField>
-              <div className="studio-tools" style={{ marginTop: 16 }}>
+              <div className="studio-tools mt-4">
                 <NesButton variant="success" onClick={() => void save()} disabled={busy !== "idle"}>
                   {busy === "saving" ? "Saving…" : "Save to gallery"}
                 </NesButton>
@@ -455,12 +455,12 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
               gallery. Exporting works without an account.
             </p>
           )}
-          <div className="studio-tools" style={{ marginTop: 16 }}>
+          <div className="studio-tools mt-4">
             <NesButton onClick={() => void exportSvg()}>Copy SVG</NesButton>
             <NesButton onClick={() => void exportCode()}>Copy code</NesButton>
           </div>
           {status ? (
-            <p className={`studio-status${status.tone === "error" ? " is-error" : ""}`} role="status" style={{ marginTop: 16 }}>
+            <p className={`studio-status mt-4${status.tone === "error" ? " is-error" : ""}`} role="status">
               {status.text}
             </p>
           ) : null}

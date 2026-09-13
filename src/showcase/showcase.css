@@ -547,6 +547,12 @@ details.snippet-details summary {
   justify-content: center;
 }
 
+.studio-sample {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
 .auth-card {
   max-width: 420px;
 }
