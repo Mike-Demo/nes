@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
 import "./showcase.css";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Overview" },
@@ -10,6 +11,7 @@ const NAV = [
   { to: "/typography", label: "Typography" },
   { to: "/icons", label: "Iconography" },
   { to: "/components", label: "Components" },
+  { to: "/studio", label: "Icon studio" },
 ] as const;
 
 export function ShowcaseShell({ children }: { children: ReactNode }) {
@@ -32,6 +34,9 @@ export function ShowcaseShell({ children }: { children: ReactNode }) {
             {item.label}
           </Link>
         ))}
+        <div className="nav-footer">
+          <ThemeToggle />
+        </div>
       </nav>
       <main className="showcase-main">{children}</main>
     </div>
