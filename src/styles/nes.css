@@ -191,3 +191,8 @@ summary:focus-visible,
 /* Links: the framework default blue is too light for body text. */
 a { color: var(--nes-primary-text); }
 a:hover, a:focus { color: color-mix(in srgb, var(--nes-primary-text) 85%, #000); }
+
+/* Badges carry white text on the fill, so they use the text-safe shades too. */
+.nes-badge span.is-primary { background-color: var(--nes-primary-text); box-shadow: 0 0.5em var(--nes-primary-text), 0 -0.5em var(--nes-primary-text), 0.5em 0 var(--nes-primary-text), -0.5em 0 var(--nes-primary-text); }
+.nes-badge span.is-success { background-color: var(--nes-success-text); box-shadow: 0 0.5em var(--nes-success-text), 0 -0.5em var(--nes-success-text), 0.5em 0 var(--nes-success-text), -0.5em 0 var(--nes-success-text); }
+.nes-badge span.is-error { background-color: var(--nes-error-text); box-shadow: 0 0.5em var(--nes-error-text), 0 -0.5em var(--nes-error-text), 0.5em 0 var(--nes-error-text), -0.5em 0 var(--nes-error-text); }
