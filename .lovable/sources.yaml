@@ -1,3 +1,6 @@
 components:
   - file: src/index.ts
     operation: ts-named-exports
+tokens:
+  - file: src/styles/nes.css
+    operation: css-variables

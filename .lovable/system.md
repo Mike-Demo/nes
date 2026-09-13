@@ -20,6 +20,16 @@ Consumers must do two things before components render correctly:
    the document head, but it is not required. Without the font, everything
    falls back to a system font and the aesthetic is lost.
 
+## Palettes
+
+The stylesheet ships two palettes as CSS variables (`--nes-primary`,
+`--nes-success`, `--nes-warning`, `--nes-error`, `--nes-dark`, `--nes-bg`,
+`--nes-surface`, `--nes-hover`, `--nes-shadow`, `--nes-disabled` and their
+`-hover` / `-shadow` shades). The retro palette is the default; switch with
+`document.documentElement.setAttribute("data-nes-theme", "fresh")`. Never
+hardcode a hex — read the token. Pixel-art sprites keep their drawn colors in
+both palettes; rune icons follow `currentColor`.
+
 ## Hard constraints
 
 - NEVER use inline styles or raw CSS values for color, border, or shadow on
