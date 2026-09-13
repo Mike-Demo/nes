@@ -122,8 +122,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      {/* NesProvider is how consumers wire the font + palette; the showcase uses it too. */}
+      <NesProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </NesProvider>
     </QueryClientProvider>
   );
 }
