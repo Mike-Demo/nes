@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TypographyRouteImport } from './routes/typography'
+import { Route as StudioRouteImport } from './routes/studio'
 import { Route as LovableRouteImport } from './routes/lovable'
 import { Route as IconsRouteImport } from './routes/icons'
 import { Route as ComponentsRouteImport } from './routes/components'
@@ -22,6 +23,11 @@ import { Route as Char91__componentChar93PreviewSplatRouteImport } from './route
 const TypographyRoute = TypographyRouteImport.update({
   id: '/typography',
   path: '/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LovableRoute = LovableRouteImport.update({
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
   '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/components'
     | '/icons'
     | '/lovable'
+    | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
     | '/__component/preview/$'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/components'
     | '/icons'
     | '/lovable'
+    | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
     | '/__component/preview/$'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/components'
     | '/icons'
     | '/lovable'
+    | '/studio'
     | '/typography'
     | '/api/generate-pixel-icon'
     | '/__component/preview/$'
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   ComponentsRoute: typeof ComponentsRoute
   IconsRoute: typeof IconsRoute
   LovableRoute: typeof LovableRoute
+  StudioRoute: typeof StudioRoute
   TypographyRoute: typeof TypographyRoute
   ApiGeneratePixelIconRoute: typeof ApiGeneratePixelIconRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
@@ -156,6 +169,13 @@ declare module '@tanstack/react-router' {
       path: '/typography'
       fullPath: '/typography'
       preLoaderRoute: typeof TypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable': {
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsRoute: ComponentsRoute,
   IconsRoute: IconsRoute,
   LovableRoute: LovableRoute,
+  StudioRoute: StudioRoute,
   TypographyRoute: TypographyRoute,
   ApiGeneratePixelIconRoute: ApiGeneratePixelIconRoute,
   Char91__componentChar93PreviewSplatRoute:
