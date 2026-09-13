@@ -158,6 +158,20 @@ import { NesPixelArt } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-30
 |---|---|---|
 | `name` | mario · kirby · ash · pokeball · bulbasaur · charmander · squirtle · octocat · bcrikko · phone · smartphone · logo · jp-logo | `—` |
 
+### NesPixelIcon
+
+```ts
+import { NesPixelIcon } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6"
+```
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `icon` | any | `—` |
+| `size` | small · medium · large | `medium` |
+| `monochrome` | boolean | `false` |
+
 ### NesProgress
 
 ```ts

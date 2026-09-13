@@ -2,24 +2,24 @@
   "meta": {
     "name": "NES",
     "package": "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "framework": "react",
     "css_framework": "plain-css",
     "starter_template": "custom_design_system",
     "theme_files": [
-      "src/styles.css",
       "src/styles/nes.css"
     ],
     "source_type": "local",
     "source_manifest": {
-      "#enrichment": "d66d7484736296fb075eb62845aa5439b1f9668c2c95713992b050278d8f7c5e",
-      ".dsignore": "2c7d76468c15bc0f1499420154f01ae3",
+      "#enrichment": "d23ed42457b7dd5d71f9b3e7499eb742147c9bceed5b4bdef972442113bc194b",
+      ".dsignore": "83e96707873f4729640c0115676fde50",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
-      ".lovable/meta.yaml": "14155149216b60f3bc805221ff09410b",
+      ".lovable/meta.yaml": "b77097485054b58e13a25521910f1e6a",
       ".lovable/plan/add-rune-pixel-icons-to-the-design-system-2026-09-13.md": "e9ee41a4fa26bfb8dbff4321b5259051",
       ".lovable/plan/nes-css-design-system-library-2026-09-12.md": "0b69537b06815182ad1389b572121228",
-      ".lovable/sources.yaml": "5ea3100338215d9e4a6ed380b1e63b7b",
-      ".lovable/system.md": "ceaac683ba3f292eb5cbbb29e7e2fc67",
+      ".lovable/plan/showcase-upgrade-pixel-icon-studio-themes-spec-pages-unified-2026-09-13.md": "aea4c375eb2bd728838cde6429f1906f",
+      ".lovable/sources.yaml": "0f74efc1cc2dd497f25db9fe04310981",
+      ".lovable/system.md": "2b8ad0e97cf8f2a03d24b8b880f0d757",
       "LICENSE-nes-css": "e565b575ac080dbd49eba74669fe2dd3",
       "LICENSE-runeicons": "e134bc2c08e98400d5425e836dc90989",
       "README.md": "df5d2250ed9e9fe13ea08d52b6418463",
@@ -27,8 +27,9 @@
       "eslint.config.js": "07a67437fb1a45ab36d6de0145ff09de",
       "lovable.toml": "9636c1bf32f9901bfba4eabb92981217",
       "mockupPreviewPlugin.ts": "8024d439734f27417621536969f64db1",
-      "package.json": "53a714fa57ed39362143008eedc8c655",
+      "package.json": "62d7e0634fec3d9097d9b11ee167cbd8",
       "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "roadmap.md": "4a65c922971414181071398a979e3492",
       "src/assets/cursors/cursor-click.png": "751fb548b97168b9087f397192c7bc93",
       "src/assets/cursors/cursor.png": "9b60cca4bc7f5a5efc45229018fbf1cf",
       "src/components/NesAvatar.tsx": "dd0ba49ed1c884fe1915b27706cf2204",
@@ -43,37 +44,158 @@
       "src/components/NesInput.tsx": "850e7ba00aff939621cbb1b21898a7b0",
       "src/components/NesList.tsx": "f4b89665256bfcda975012f0cf072da4",
       "src/components/NesPixelArt.tsx": "597d566c19ecf260dd85a006600f5cbe",
+      "src/components/NesPixelIcon.tsx": "752978c1caa5163a10ce5df8fe0e8d35",
       "src/components/NesProgress.tsx": "e098501d96cd4a11bbfe380ffcfcced5",
       "src/components/NesRuneIcon.tsx": "d51d61da2771c23aa0f5a0fb88b38bbe",
       "src/components/NesSelect.tsx": "19f650daf2d1d6269eae626888eba2b4",
       "src/components/NesTable.tsx": "3a8481f47fbab4792d64d03c680349e0",
       "src/components/NesText.tsx": "8292bac709c6920f9922e381964a95f0",
+      "src/components/pixel-icon.ts": "929e5e653d9a2bd1c9dc6be49af4c395",
       "src/components/runes.ts": "3d85e24234f7efef74a6bf4c4843565b",
-      "src/index.ts": "32c1e270153bfbabce3f1360c58bafd6",
+      "src/index.ts": "553fda45b6f8f04bc64778dbb7c8fa35",
+      "src/integrations/supabase/auth-attacher.ts": "dad043cda134d909e52de0346c16625e",
+      "src/integrations/supabase/auth-middleware.ts": "eabaf8c8ba32205717921ce5f255185e",
+      "src/integrations/supabase/client.server.ts": "23f838ab7633e0a97e695f3c500d91aa",
+      "src/integrations/supabase/client.ts": "8af43e12f1332b440278c7ea7e4cb1e8",
+      "src/integrations/supabase/cron-auth.ts": "6c04781ff98ada5977945fae55d39385",
+      "src/integrations/supabase/previewAuthStorage.ts": "bc45a76c9242c4b85d6d4345625c46e9",
+      "src/integrations/supabase/types.ts": "1e606dabe931dae9bda8bd2357a6b565",
       "src/lib/utils.ts": "c752c7e5ba2d28c91396b3df374ff38f",
       "src/mockup-preview.d.ts": "38969839f35ce2966e32a9f01a5c09ea",
-      "src/routeTree.gen.ts": "07ac19530ef8884a55936d2179f69acf",
+      "src/routeTree.gen.ts": "7403cd8fdd18d6cea00c2307c5e17fac",
       "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
       "src/routes/[__component].preview.$.tsx": "3a40af1fe37daff2e891175a6e6d4f99",
       "src/routes/[__mockup].preview.$.tsx": "5d9f42470848aa60148f20f9580e240e",
-      "src/routes/__root.tsx": "128a313e796370b2506819cbae2e1370",
+      "src/routes/__root.tsx": "932911053bf4efac5c43a41462f616bb",
+      "src/routes/api/generate-pixel-icon.ts": "bb4539907f043c41ee4dfc0ddf9df32d",
+      "src/routes/auth.tsx": "8a8939c96e2dab7259f5b2264cd30fa7",
       "src/routes/colors.tsx": "c952794f17302ba477d06c2aae5b4bac",
-      "src/routes/components.tsx": "038d7c372430f8fd14ace92a011bb5ee",
-      "src/routes/icons.tsx": "0af52a308e94f9ac5d222e7a27d0f159",
+      "src/routes/components.tsx": "559bd2dcd057c806536b2f0804ec8f52",
+      "src/routes/icons.tsx": "f85d3f1af0ac503e43d74452634d48bc",
       "src/routes/index.tsx": "fb5f295bfd2f46e52e4a81dfe1b317bb",
       "src/routes/lovable.tsx": "d879d864d267984cc8843bb97670de59",
+      "src/routes/specs.$name.tsx": "e084dd10d6c4ae1acb53f86fe4157964",
+      "src/routes/specs.index.tsx": "708934009104701de108eb593d1ebb38",
+      "src/routes/studio.tsx": "0946dfd91fb758b3cfafb2c76990d639",
       "src/routes/typography.tsx": "a0f3dc72aefc0a22297b186aef0e36f6",
-      "src/showcase/ShowcaseShell.tsx": "d76008df1f67e023354c968af8aa86a3",
-      "src/showcase/showcase.css": "ad92435ee664728b461345a1c8f6fb18",
+      "src/showcase/IconGallery.tsx": "ea9fb1a9fc6bba84b8d1cd47d74887ca",
+      "src/showcase/ShowcaseShell.tsx": "375662a027c8083154dba0acf5a107e6",
+      "src/showcase/ThemeToggle.tsx": "2a94c7146e57e2eda1de7f7a4a710809",
+      "src/showcase/showcase.css": "49cfc5f8659f4997ef4f656d5dc1c937",
+      "src/showcase/specs.tsx": "86fd4756e70cf85a92032e16ad4a5e25",
+      "src/showcase/studio/PixelEditor.tsx": "37595bf43628e10677613d206d17092b",
+      "src/showcase/studio/generate.ts": "ab1932bc8f1ce8b2bcfbf2f7414c32ad",
+      "src/showcase/studio/grid.ts": "927fd63e64fbb153697a580399571791",
+      "src/showcase/studio/palette.ts": "317ce2d5763037a46efaf0eb6447ea80",
+      "src/showcase/studio/pixel-icons.service.ts": "92468ad30b9af6dcdb811114c88cba27",
+      "src/showcase/studio/useAuthUser.ts": "443dbeb952e395079e7c55a54e107e14",
+      "src/showcase/theme.ts": "88de48a9cba46085e022ef4c2ca4cb6f",
       "src/styles.css": "b2cf7f6aa0ee5ecbaa7a1f307dbc381f",
-      "src/styles/nes.css": "fa26da589e4c6d54708f18f3ff50bd9d",
+      "src/styles/nes.css": "4941781182f6727c812f98613dee9b6a",
+      "supabase/config.toml": "ce78e0993d8e658d5b75c21d5d290eaa",
+      "supabase/migrations/20260913004619_7543b78a-a113-47e8-a6db-a616d8f2536e.sql": "e759c29d7694823f921ca736e6324218",
       "tsconfig.json": "994abf64c2b9f78b568879f80ed0170e",
       "vite.config.ts": "9f787596cc6f9a2aa3de5a021aed28f3",
       "wrangler.jsonc": "680b897d48e44bcc65fe437c29b38f3b"
     },
     "pipeline_version": 8
   },
-  "tokens": {},
+  "tokens": {
+    "color": [
+      {
+        "name": "--nes-primary",
+        "raw": "#209cee",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-primary-hover",
+        "raw": "#108de0",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-success",
+        "raw": "#92cc41",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-success-hover",
+        "raw": "#76c442",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-warning",
+        "raw": "#f7d51d",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-warning-hover",
+        "raw": "#f2c409",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-error",
+        "raw": "#e76e55",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-error-hover",
+        "raw": "#ce372b",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-dark",
+        "raw": "#212529",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-bg",
+        "raw": "#ffffff",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-surface",
+        "raw": "#f7f7f7",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-hover",
+        "raw": "#e7e7e7",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-disabled",
+        "raw": "#d3d3d3",
+        "source": "src/styles/nes.css"
+      }
+    ],
+    "shadow": [
+      {
+        "name": "--nes-primary-shadow",
+        "raw": "#006bb3",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-success-shadow",
+        "raw": "#4aa52e",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-warning-shadow",
+        "raw": "#e59400",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-error-shadow",
+        "raw": "#8c2022",
+        "source": "src/styles/nes.css"
+      },
+      {
+        "name": "--nes-shadow",
+        "raw": "#adafbc",
+        "source": "src/styles/nes.css"
+      }
+    ]
+  },
   "components": [
     {
       "name": "NesButton",
@@ -501,6 +623,33 @@
       "antipatterns": [
         "Do not set fill or color via inline style — color it through text color.",
         "Do not use for heart/star/coin/social icons that NesIcon already provides natively."
+      ]
+    },
+    {
+      "name": "NesPixelIcon",
+      "file": "src/components/NesPixelIcon",
+      "import_path": "",
+      "props": [
+        {
+          "name": "icon",
+          "type": "any",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "default": "medium"
+        },
+        {
+          "name": "monochrome",
+          "type": "boolean",
+          "default": "false"
+        }
       ]
     }
   ],
