@@ -47,6 +47,11 @@ Consumers must do two things before components render correctly:
 - NesIcon and NesPixelArt render `<i>` elements that are `aria-hidden` by
   default. Pass `aria-label` when the icon IS the content (e.g. an icon-only
   like button).
+- Icon choice: use NesIcon for the small NES-native set (heart, star, coin,
+  social marks) and NesRuneIcon for everything else — it ships 215 pixel
+  glyphs (`name` prop, see RUNE_ICONS). NesRuneIcon fills with
+  `currentColor`, so color it with NesText variants or a text-color class,
+  never a raw fill or style.
 - NesDialog is a native `<dialog>`; open it with `open` or
   `ref.current?.showModal()`.
 
