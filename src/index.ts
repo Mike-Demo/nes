@@ -1,3 +1,5 @@
+import "./styles/nes.css";
+
 export { NesButton, type NesButtonProps, type NesButtonVariant } from "./components/NesButton";
 export { NesBadge, type NesBadgeProps, type NesBadgeVariant } from "./components/NesBadge";
 export { NesBalloon, type NesBalloonProps } from "./components/NesBalloon";

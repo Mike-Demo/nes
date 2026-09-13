@@ -14,14 +14,11 @@ Consumers must do two things before components render correctly:
    ```
    (Path may differ by attach slug — import the `styles/nes.css` file this
    library ships.)
-2. Load the Press Start 2P webfont. Add to the document head:
-   ```html
-   <link rel="preconnect" href="https://fonts.googleapis.com" />
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-   ```
-   Without the font, everything falls back to a system font and the aesthetic
-   is lost.
+2. The Press Start 2P webfont ships with the library: `styles/nes.css`
+   declares it via `@font-face`, so importing the stylesheet is enough. For
+   faster first paint you may additionally preconnect to fonts.gstatic.com in
+   the document head, but it is not required. Without the font, everything
+   falls back to a system font and the aesthetic is lost.
 
 ## Hard constraints
 
