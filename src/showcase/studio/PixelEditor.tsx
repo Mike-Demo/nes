@@ -174,7 +174,7 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
   const loadNesIcon = (iconName: NesIconName) => {
     const host = sampleRef.current;
     if (!host) return;
-    host.className = `nes-icon ${iconName}`;
+    host.className = `studio-sample nes-icon ${iconName}`;
     const before = getComputedStyle(host, "::before");
     const unit = Number.parseFloat(before.width) || 1;
     const next = boxShadowToGrid(before.boxShadow, unit, 16, paletteHex);
