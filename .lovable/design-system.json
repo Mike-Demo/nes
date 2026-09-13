@@ -2,7 +2,7 @@
   "meta": {
     "name": "NES",
     "package": "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "framework": "react",
     "css_framework": "plain-css",
     "starter_template": "custom_design_system",
@@ -15,6 +15,7 @@
       ".dsignore": "83e96707873f4729640c0115676fde50",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
       ".lovable/meta.yaml": "b77097485054b58e13a25521910f1e6a",
+      ".lovable/plan.md": "ef4f0f0b42cebdc291b32af5aef9b57d",
       ".lovable/plan/add-rune-pixel-icons-to-the-design-system-2026-09-13.md": "e9ee41a4fa26bfb8dbff4321b5259051",
       ".lovable/plan/nes-css-design-system-library-2026-09-12.md": "0b69537b06815182ad1389b572121228",
       ".lovable/plan/showcase-upgrade-pixel-icon-studio-themes-spec-pages-unified-2026-09-13.md": "aea4c375eb2bd728838cde6429f1906f",
