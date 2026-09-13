@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      pixel_icons: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          owner_id: string
+          palette: Json
+          pixels: Json
+          size: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          owner_id: string
+          palette?: Json
+          pixels: Json
+          size?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          owner_id?: string
+          palette?: Json
+          pixels?: Json
+          size?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
