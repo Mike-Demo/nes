@@ -9,6 +9,7 @@ import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import nesCss from "../styles/nes.css?url";
+import { NesProvider } from "../lib/NesProvider";
 
 const initialRevealStyles = `
   html.app-cloak body {
