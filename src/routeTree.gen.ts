@@ -15,6 +15,7 @@ import { Route as IconsRouteImport } from './routes/icons'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiGeneratePixelIconRouteImport } from './routes/api/generate-pixel-icon'
 import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
 
@@ -48,6 +49,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiGeneratePixelIconRoute = ApiGeneratePixelIconRouteImport.update({
+  id: '/api/generate-pixel-icon',
+  path: '/api/generate-pixel-icon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91__mockupChar93PreviewSplatRoute =
   Char91__mockupChar93PreviewSplatRouteImport.update({
     id: '/__mockup/preview/$',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/icons': typeof IconsRoute
   '/lovable': typeof LovableRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/lovable'
     | '/typography'
+    | '/api/generate-pixel-icon'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesByTo: FileRoutesByTo
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/lovable'
     | '/typography'
+    | '/api/generate-pixel-icon'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   id:
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/lovable'
     | '/typography'
+    | '/api/generate-pixel-icon'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesById: FileRoutesById
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   IconsRoute: typeof IconsRoute
   LovableRoute: typeof LovableRoute
   TypographyRoute: typeof TypographyRoute
+  ApiGeneratePixelIconRoute: typeof ApiGeneratePixelIconRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
   Char91__mockupChar93PreviewSplatRoute: typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/generate-pixel-icon': {
+      id: '/api/generate-pixel-icon'
+      path: '/api/generate-pixel-icon'
+      fullPath: '/api/generate-pixel-icon'
+      preLoaderRoute: typeof ApiGeneratePixelIconRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/__mockup/preview/$': {
       id: '/__mockup/preview/$'
       path: '/__mockup/preview/$'
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   IconsRoute: IconsRoute,
   LovableRoute: LovableRoute,
   TypographyRoute: TypographyRoute,
+  ApiGeneratePixelIconRoute: ApiGeneratePixelIconRoute,
   Char91__componentChar93PreviewSplatRoute:
     Char91__componentChar93PreviewSplatRoute,
   Char91__mockupChar93PreviewSplatRoute: Char91__mockupChar93PreviewSplatRoute,
