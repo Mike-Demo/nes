@@ -202,3 +202,6 @@ a:hover, a:focus { color: color-mix(in srgb, var(--nes-primary-text) 85%, #000);
 .nes-badge span.is-error:first-child,
 .nes-badge span.is-error:last-child,
 .nes-badge span.is-error { background-color: var(--nes-error-text); box-shadow: 0 0.5em var(--nes-error-text), 0 -0.5em var(--nes-error-text), 0.5em 0 var(--nes-error-text), -0.5em 0 var(--nes-error-text); }
+
+/* Disabled text still needs to be readable; it is dimmed, not invisible. */
+.nes-text.is-disabled { color: var(--nes-muted-text); }
