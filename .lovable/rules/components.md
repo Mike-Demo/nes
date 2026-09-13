@@ -156,7 +156,7 @@ import { NesPixelArt } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-30
 
 | Prop | Type | Default |
 |---|---|---|
-| `name` | mario · kirby · ash · pokeball · bulbasaur · charmander · squirtle · octocat · bcrikko · phone · smartphone · nes-icon · jp-icon · logo · jp-logo | `—` |
+| `name` | mario · kirby · ash · pokeball · bulbasaur · charmander · squirtle · octocat · bcrikko · phone · smartphone · logo · jp-logo | `—` |
 
 ### NesProgress
 
@@ -182,6 +182,38 @@ import { NesRadio } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9
 |---|---|---|
 | `label` | any | `—` |
 | `dark` | boolean | `false` |
+
+### NesRuneIcon
+
+```ts
+import { NesRuneIcon } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6"
+```
+
+Pixel rune glyph from the Rune Icons set (215 icons). Reaches beyond the small NES-native NesIcon set; fills with currentColor so it follows text color.
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `name` | any | `—` |
+| `size` | small · medium · large | `medium` |
+
+**Examples:**
+
+_Basic_
+```tsx
+<NesRuneIcon name="star" size="medium" />
+```
+
+_Colored via text_
+```tsx
+<NesText variant="error"><NesRuneIcon name="heart" size="small" /> 3</NesText>
+```
+
+**Avoid:**
+
+- Do not set fill or color via inline style — color it through text color.
+- Do not use for heart/star/coin/social icons that NesIcon already provides natively.
 
 ### NesSelect
 
