@@ -1,6 +1,6 @@
 import { NesButton } from "@/components/NesButton";
 
-import { NES_THEMES, useNesTheme, type NesTheme } from "./theme";
+import { NES_THEMES, useNesTheme, type NesTheme } from "../lib/theme";
 
 const LABELS: Record<NesTheme, string> = {
   retro: "NES retro",
