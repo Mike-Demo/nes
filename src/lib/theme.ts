@@ -34,7 +34,7 @@ export function applyTheme(theme: NesTheme): void {
   for (const listener of listeners) listener();
 }
 
-/** Showcase-only hook: reads and switches the active NES palette. */
+/** Reads and switches the active NES palette. */
 export function useNesTheme(): [NesTheme, (theme: NesTheme) => void] {
   const theme = useSyncExternalStore<NesTheme>(subscribe, readTheme, () => "retro");
   const setTheme = useCallback((next: NesTheme) => {

@@ -20,7 +20,7 @@ import {
   type PixelIconData,
 } from "@/components/pixel-icon";
 
-import { useNesTheme } from "../theme";
+import { useNesTheme } from "../../lib/theme";
 import { rasterizeToGrid, streamPixelIcon } from "./generate";
 import { boxShadowToGrid, compactPalette, floodFill, isGridEmpty, paintCell, resizeGrid, type Grid } from "./grid";
 import { readThemePalette, type PaletteEntry } from "./palette";

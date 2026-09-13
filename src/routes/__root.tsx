@@ -58,7 +58,7 @@ const initialRevealScript = `
 `;
 
 // Applies the persisted NES theme before first paint so the showcase never
-// flashes the wrong palette. The key mirrors src/showcase/theme.ts.
+// flashes the wrong palette. The key mirrors src/lib/theme.ts.
 const themeBootScript = `
   (() => {
     try {
