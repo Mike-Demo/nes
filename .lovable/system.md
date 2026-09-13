@@ -71,7 +71,34 @@ both palettes; rune icons follow `currentColor`.
   `label` prop on NesCheckbox/NesRadio.
 - Icon-only controls must carry an `aria-label`.
 - The error/warning variants alone are not enough to signal validation —
-  pair them with a text message.
+  pair them with a text message wired via `aria-describedby`.
+- Color for TEXT: the palette colors are tuned for fills, borders, and icons
+  and do NOT clear 4.5:1 as small text (retro primary 2.98, success 1.92,
+  warning 1.45, error 3.11 on white). Colored words must use the text-only
+  tokens `--nes-primary-text`, `--nes-success-text`, `--nes-warning-text`,
+  `--nes-error-text` (these are what `.nes-text.is-*` and NesText render).
+  Fills, borders, and badges keep the base tokens.
+- Focus: every interactive element gets a 4px `var(--nes-focus-ring)` ring
+  via `:focus-visible`. Never remove an outline without an equal replacement.
+- Layout: one `<main>` per page and a skip link to it as the first focusable
+  element. Headings step down one level at a time.
+- Touch: keep tap targets at 44x44px minimum on coarse pointers; widen the
+  hit area with padding or an `::after` overlay rather than scaling the pixel
+  artwork.
+- Do not use `role="tab"` for filter buttons that don't manage tab panels —
+  use a labelled group of buttons with `aria-pressed`.
+
+### Built-in fallbacks
+
+- `prefers-reduced-motion: reduce` disables transitions, hover lifts, and the
+  framework blink animation.
+- `forced-colors: active` replaces pixel box-shadow decoration with real
+  borders and system colors so controls stay visible in high-contrast mode.
+  Multi-color sprites are decorative there — always keep a text label nearby.
+- The type stack is `"Press Start 2P", "Courier New", ui-monospace, monospace`
+  so a blocked web font still renders readable text; the pixel cursor declares
+  `pointer` / `auto` as its fallback.
+- Palette selection falls back to retro when local storage is unavailable.
 
 ## Composition examples
 

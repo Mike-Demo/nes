@@ -309,17 +309,23 @@ export function PixelEditor({ onSaved }: PixelEditorProps) {
           onPointerCancel={endStroke}
           onKeyDown={onKeyDown}
         >
-          {cells.map((cell) => (
-            <div
-              key={`${cell.x}-${cell.y}`}
-              role="gridcell"
-              aria-selected={cursor.x === cell.x && cursor.y === cell.y}
-              className="studio-cell"
-              style={{
-                backgroundColor: cell.fill ?? "transparent",
-                outline: cursor.x === cell.x && cursor.y === cell.y ? "2px solid var(--nes-primary)" : undefined,
-              }}
-            />
+          {Array.from({ length: size }, (_, y) => (
+            <div key={`row-${y}`} role="row" className="studio-row">
+              {cells
+                .filter((cell) => cell.y === y)
+                .map((cell) => (
+                  <div
+                    key={`${cell.x}-${cell.y}`}
+                    role="gridcell"
+                    aria-selected={cursor.x === cell.x && cursor.y === cell.y}
+                    className="studio-cell"
+                    style={{
+                      backgroundColor: cell.fill ?? "transparent",
+                      outline: cursor.x === cell.x && cursor.y === cell.y ? "2px solid var(--nes-primary)" : undefined,
+                    }}
+                  />
+                ))}
+            </div>
           ))}
         </div>
         <span className="showcase-caption">

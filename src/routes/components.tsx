@@ -40,6 +40,13 @@ const SECTIONS = [
   "NesAvatar", "NesIcon", "NesPixelArt", "NesRuneIcon",
 ] as const;
 
+/** Written hints so a field state never relies on color alone. */
+const STATE_HINTS: Record<"success" | "warning" | "error", string> = {
+  success: "OK — name is free",
+  warning: "Careful — almost full",
+  error: "Error — name is taken",
+};
+
 function Snippet({ code }: { code: string }) {
   return <pre className="snippet">{code}</pre>;
 }
@@ -219,12 +226,19 @@ function ComponentsPage() {
             </div>
             {(["success", "warning", "error"] as const).map((s) => (
               <div key={s} className="specimen">
-                <NesInput state={s} defaultValue={s} aria-label={`${s} input`} />
+                <NesInput state={s} defaultValue={s} aria-label={`${s} input`} aria-describedby={`input-hint-${s}`} />
+                <NesText id={`input-hint-${s}`} variant={s}>
+                  {STATE_HINTS[s]}
+                </NesText>
                 <span className="showcase-caption">state="{s}"</span>
               </div>
             ))}
           </div>
-          <Snippet code={`<NesInput state="success" defaultValue="PIKACHU" />`} />
+          <p className="lede">
+            The frame color never carries the message on its own — always pair a
+            state with a written hint so it survives for color-blind readers.
+          </p>
+          <Snippet code={`<NesInput state="success" aria-describedby="hint" />\n<NesText id="hint" variant="success">OK — name is free</NesText>`} />
         </Section>
       )}
 
@@ -236,7 +250,15 @@ function ComponentsPage() {
               <span className="showcase-caption">default</span>
             </div>
             <div className="specimen" style={{ minWidth: 320 }}>
-              <NesTextarea state="error" defaultValue="Missing pages..." aria-label="story error" />
+              <NesTextarea
+                state="error"
+                defaultValue="Missing pages..."
+                aria-label="story error"
+                aria-describedby="textarea-hint-error"
+              />
+              <NesText id="textarea-hint-error" variant="error">
+                {STATE_HINTS.error}
+              </NesText>
               <span className="showcase-caption">state="error"</span>
             </div>
           </div>
