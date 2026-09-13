@@ -217,6 +217,31 @@
   margin: 0;
 }
 
+.icon-tile-wrap {
+  position: relative;
+}
+
+.icon-tile-delete {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border: 4px solid var(--nes-dark);
+  background: var(--nes-error);
+  color: var(--nes-bg);
+  font: inherit;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-tile-delete:focus-visible {
+  outline: 4px solid var(--nes-primary);
+  outline-offset: 2px;
+}
+
 .gallery-toolbar {
   display: flex;
   flex-wrap: wrap;
