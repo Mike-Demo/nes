@@ -138,6 +138,8 @@ export function IconGallery() {
 
   const remove = async (item: GalleryItem) => {
     if (!item.savedId) return;
+    const confirmed = window.confirm(`Delete "${item.name}"? This cannot be undone.`);
+    if (!confirmed) return;
     try {
       await deletePixelIcon(item.savedId);
       setCustom((list) => list.filter((c) => c.id !== item.savedId));
