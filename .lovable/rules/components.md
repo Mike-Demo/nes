@@ -184,6 +184,20 @@ import { NesProgress } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-30
 |---|---|---|
 | `variant` | default · primary · success · warning · error · pattern | `default` |
 
+### NesProvider
+
+```ts
+import { NesProvider } from "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6"
+```
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `defaultTheme` | any | `retro` |
+| `loadFont` | boolean | `true` |
+| `children` | any | `—` |
+
 ### NesRadio
 
 ```ts
