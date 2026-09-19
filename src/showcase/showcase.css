@@ -220,33 +220,28 @@
   position: relative;
 }
 
+/* Visual size stays 24x24. A transparent 10px border widens the hit
+   area to 44x44 (the visible square is the padding box); taps that
+   graze the copy tile are guarded by the delete confirmation. */
 .icon-tile-delete {
   position: absolute;
-  top: -8px;
-  right: 0;
+  top: -18px;
+  right: -10px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
-  border: 4px solid var(--nes-dark);
-  background: var(--nes-error);
+  padding: 0;
+  border: 10px solid transparent;
+  background: var(--nes-error) padding-box;
+  box-shadow: inset 0 0 0 4px var(--nes-dark);
   color: var(--nes-bg);
   font: inherit;
   font-size: 10px;
   line-height: 1;
   cursor: pointer;
-  padding: 0;
-}
-
-.icon-tile-delete::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 44px;
-  height: 44px;
-  transform: translate(-50%, -50%);
-  /* The pseudo-element is only a visual touch-target hint; it must not
-     capture pointer events because it overlaps the neighbouring copy tile. */
-  pointer-events: none;
 }
 
 .icon-tile-delete:focus-visible {
@@ -732,6 +727,14 @@ details.snippet-details summary {
   .spec-swatch,
   .showcase-toast {
     border: 1px solid CanvasText;
+  }
+
+  /* Box shadows are dropped in forced colors, so the delete button loses
+     its drawn frame; restore it with a real border (hit area shrinks to
+     32px there, still above the 24px minimum). */
+  .icon-tile-delete {
+    border-width: 4px;
+    border-color: ButtonText;
   }
 }
 
