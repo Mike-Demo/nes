@@ -29,9 +29,8 @@ in `vite.config.ts`. Add a public route there and to `public/sitemap.xml`.
 
 - `public/_redirects` — `/*  /index.html  200` so deep links work.
 - `public/robots.txt` — points at `/sitemap.xml`.
-- `public/sitemap.xml` — lists all 30 public routes. **Replace the
-  `https://your-domain.example` base URL with the real domain before going
-  live.**
+- `public/sitemap.xml` — lists all 30 public routes. The base URL is already
+  set to `https://design.2.MikeDemo.dev`.
 
 ## Notes
 
