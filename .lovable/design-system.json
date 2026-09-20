@@ -2,7 +2,7 @@
   "meta": {
     "name": "NES",
     "package": "@ws-q44iemhjvr3azhdcenod/2d41e7ac-ac8d-4713-844e-300c9d4181e6",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "framework": "react",
     "css_framework": "plain-css",
     "starter_template": "custom_design_system",
@@ -15,6 +15,7 @@
       ".dsignore": "2c7d76468c15bc0f1499420154f01ae3",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
       ".lovable/meta.yaml": "b77097485054b58e13a25521910f1e6a",
+      ".lovable/plan.md": "060cee2f9ef16bf3aa51cbffe6b6b475",
       ".lovable/plan/nes-css-design-system-library-2026-09-12.md": "0b69537b06815182ad1389b572121228",
       ".lovable/sources.yaml": "5ea3100338215d9e4a6ed380b1e63b7b",
       ".lovable/system.md": "c421eb8c3d162cfe5587eb1769000cb1",
