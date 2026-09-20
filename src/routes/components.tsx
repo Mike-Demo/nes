@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 
 import { ShowcaseShell } from "../showcase/ShowcaseShell";
+import { SPEC_NAMES } from "../showcase/specs";
 import { NesAvatar } from "../components/NesAvatar";
 import { NesBadge } from "../components/NesBadge";
 import { NesBalloon } from "../components/NesBalloon";
@@ -14,6 +15,7 @@ import { NesIcon } from "../components/NesIcon";
 import { NesInput, NesTextarea } from "../components/NesInput";
 import { NesList } from "../components/NesList";
 import { NesPixelArt } from "../components/NesPixelArt";
+import { NesRuneIcon } from "../components/NesRuneIcon";
 import { NesProgress } from "../components/NesProgress";
 import { NesSelect } from "../components/NesSelect";
 import { NesTable } from "../components/NesTable";
@@ -35,17 +37,32 @@ const SECTIONS = [
   "NesButton", "NesBadge", "NesBalloon", "NesContainer", "NesDialog",
   "NesField", "NesInput", "NesTextarea", "NesCheckbox", "NesRadio",
   "NesSelect", "NesList", "NesProgress", "NesTable", "NesText",
-  "NesAvatar", "NesIcon", "NesPixelArt",
+  "NesAvatar", "NesIcon", "NesPixelArt", "NesRuneIcon",
 ] as const;
+
+/** Written hints so a field state never relies on color alone. */
+const STATE_HINTS: Record<"success" | "warning" | "error", string> = {
+  success: "OK — name is free",
+  warning: "Careful — almost full",
+  error: "Error — name is taken",
+};
 
 function Snippet({ code }: { code: string }) {
   return <pre className="snippet">{code}</pre>;
 }
 
 function Section({ id, children }: { id: string; children: React.ReactNode }) {
+  const hasSpec = SPEC_NAMES.includes(id);
   return (
     <section id={id} className="showcase-section">
-      <h2>{id}</h2>
+      <div className="component-header">
+        <h2>{id}</h2>
+        {hasSpec ? (
+          <Link to="/specs/$name" params={{ name: id }} className="spec-link">
+            View spec →
+          </Link>
+        ) : null}
+      </div>
       {children}
     </section>
   );
@@ -171,8 +188,8 @@ function ComponentsPage() {
               <p>PAUSED</p>
               <p>Take a break, player 1?</p>
               <menu style={{ display: "flex", gap: 16, padding: 0 }}>
-                <NesButton>Resume</NesButton>
-                <NesButton variant="primary">Confirm</NesButton>
+                <NesButton type="submit">Resume</NesButton>
+                <NesButton type="submit" variant="primary">Confirm</NesButton>
               </menu>
             </form>
           </NesDialog>
@@ -209,12 +226,19 @@ function ComponentsPage() {
             </div>
             {(["success", "warning", "error"] as const).map((s) => (
               <div key={s} className="specimen">
-                <NesInput state={s} defaultValue={s} aria-label={`${s} input`} />
+                <NesInput state={s} defaultValue={s} aria-label={`${s} input`} aria-describedby={`input-hint-${s}`} />
+                <NesText id={`input-hint-${s}`} variant={s}>
+                  {STATE_HINTS[s]}
+                </NesText>
                 <span className="showcase-caption">state="{s}"</span>
               </div>
             ))}
           </div>
-          <Snippet code={`<NesInput state="success" defaultValue="PIKACHU" />`} />
+          <p className="lede">
+            The frame color never carries the message on its own — always pair a
+            state with a written hint so it survives for color-blind readers.
+          </p>
+          <Snippet code={`<NesInput state="success" aria-describedby="hint" />\n<NesText id="hint" variant="success">OK — name is free</NesText>`} />
         </Section>
       )}
 
@@ -226,7 +250,15 @@ function ComponentsPage() {
               <span className="showcase-caption">default</span>
             </div>
             <div className="specimen" style={{ minWidth: 320 }}>
-              <NesTextarea state="error" defaultValue="Missing pages..." aria-label="story error" />
+              <NesTextarea
+                state="error"
+                defaultValue="Missing pages..."
+                aria-label="story error"
+                aria-describedby="textarea-hint-error"
+              />
+              <NesText id="textarea-hint-error" variant="error">
+                {STATE_HINTS.error}
+              </NesText>
               <span className="showcase-caption">state="error"</span>
             </div>
           </div>
@@ -393,6 +425,21 @@ function ComponentsPage() {
           </div>
           <span className="showcase-caption">See the Iconography page for the full set</span>
           <Snippet code={`<NesPixelArt name="mario" />`} />
+        </Section>
+      )}
+
+      {show("NesRuneIcon") && (
+        <Section id="NesRuneIcon">
+          <div className="specimen-row" style={{ alignItems: "center" }}>
+            <NesRuneIcon name="star" size="small" />
+            <NesRuneIcon name="star" size="medium" />
+            <NesRuneIcon name="star" size="large" />
+            <NesText variant="error">
+              <NesRuneIcon name="heart" size="small" /> inherits text color
+            </NesText>
+          </div>
+          <span className="showcase-caption">215 rune glyphs — see the Iconography page for the full set</span>
+          <Snippet code={`<NesRuneIcon name="star" size="medium" />`} />
         </Section>
       )}
     </ShowcaseShell>

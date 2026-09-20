@@ -6,11 +6,14 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { componentTagger } from "lovable-tagger";
 import { mockupPreviewPlugin } from "./mockupPreviewPlugin";
+import { STATIC_PAGE_PATHS } from "./src/showcase/spec-names";
 
 export default defineConfig(({ command, mode }) => {
-  // Cloudflare Workers plugin only on build (produces the worker output);
-  // the workerd runtime isn't available for the dev server.
-  const useCloudflare = command === "build";
+  // The public site is served as static files, so the default build prerenders
+  // every page and needs no Workers runtime. Set LOVABLE_WORKER_BUILD=1 to get
+  // the Cloudflare Workers output back (the prerender pass can't run with it:
+  // the worker entry replaces the server entry the prerender server loads).
+  const useCloudflare = command === "build" && process.env["LOVABLE_WORKER_BUILD"] === "1";
 
   return {
     server: {
@@ -26,7 +29,12 @@ export default defineConfig(({ command, mode }) => {
       mockupPreviewPlugin(),
       tsConfigPaths({ projects: ["./tsconfig.json"] }),
       ...(useCloudflare ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
-      tanstackStart(),
+      // Every public page is prerendered to a static HTML file so the site can
+      // be served from a static host. Discovery is off: `pages` is the whole list.
+      tanstackStart({
+        pages: STATIC_PAGE_PATHS.map((path) => ({ path })),
+        prerender: { enabled: true, autoStaticPathsDiscovery: false },
+      }),
       viteReact(),
       ...(mode === "development" ? [componentTagger()] : []),
     ],
