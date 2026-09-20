@@ -20,6 +20,8 @@ import { NesTable } from "@/components/NesTable";
 import { NesText } from "@/components/NesText";
 import type { PixelIconData } from "@/components/pixel-icon";
 
+import { SPEC_PAGE_NAMES } from "./spec-names";
+
 export interface SpecRow {
   label: string;
   value: string;
@@ -636,4 +638,6 @@ export const COMPONENT_SPECS: Record<string, ComponentSpec> = {
   },
 };
 
-export const SPEC_NAMES = Object.keys(COMPONENT_SPECS);
+// Ordered by SPEC_PAGE_NAMES so the nav order and the prerendered page list
+// come from the same source.
+export const SPEC_NAMES: string[] = SPEC_PAGE_NAMES.filter((name) => name in COMPONENT_SPECS);
