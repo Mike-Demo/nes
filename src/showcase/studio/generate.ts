@@ -34,6 +34,11 @@ export async function streamPixelIcon(
   if (!res.ok || !res.body) {
     throw new Error(await describeFailure(res));
   }
+  // On a static deployment there is no server route: the catch-all rule answers
+  // with the app shell instead of a stream. Say so rather than failing obscurely.
+  if (res.headers.get("Content-Type")?.includes("text/html")) {
+    throw new Error(AI_UNAVAILABLE);
+  }
 
   let sawAnyEvent = false;
   let sawCompleted = false;
@@ -88,7 +93,11 @@ export async function streamPixelIcon(
   if (!sawCompleted) throw new Error("Image stream ended before the icon finished");
 }
 
+const AI_UNAVAILABLE =
+  "AI generation runs on a server, so it is only available in the Lovable preview — drawing, saving and loading icons work everywhere.";
+
 async function describeFailure(res: Response): Promise<string> {
+  if (res.status === 404 || res.status === 405) return AI_UNAVAILABLE;
   const text = await res.text().catch(() => "");
   if (res.status === 402) return "AI credits are used up — add credits to your workspace to keep generating.";
   if (res.status === 429) return "The AI is busy right now. Wait a moment and try again.";
