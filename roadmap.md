@@ -11,3 +11,4 @@
 - [ ] AI generate route + client quantization
 - [ ] Custom icons on /icons
 - [ ] system.md + sources.yaml + tests + browser verification
+- [ ] Remove Cloudflare build detection and verify Spacefast static output
