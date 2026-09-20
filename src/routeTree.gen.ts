@@ -10,16 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TypographyRouteImport } from './routes/typography'
+import { Route as StudioRouteImport } from './routes/studio'
+import { Route as LovableRouteImport } from './routes/lovable'
 import { Route as IconsRouteImport } from './routes/icons'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SpecsIndexRouteImport } from './routes/specs.index'
+import { Route as SpecsNameRouteImport } from './routes/specs.$name'
+import { Route as ApiGeneratePixelIconRouteImport } from './routes/api/generate-pixel-icon'
 import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
 
 const TypographyRoute = TypographyRouteImport.update({
   id: '/typography',
   path: '/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableRoute = LovableRouteImport.update({
+  id: '/lovable',
+  path: '/lovable',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IconsRoute = IconsRouteImport.update({
@@ -37,9 +54,34 @@ const ColorsRoute = ColorsRouteImport.update({
   path: '/colors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpecsIndexRoute = SpecsIndexRouteImport.update({
+  id: '/specs/',
+  path: '/specs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpecsNameRoute = SpecsNameRouteImport.update({
+  id: '/specs/$name',
+  path: '/specs/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGeneratePixelIconRoute = ApiGeneratePixelIconRouteImport.update({
+  id: '/api/generate-pixel-icon',
+  path: '/api/generate-pixel-icon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char91__mockupChar93PreviewSplatRoute =
@@ -57,29 +99,50 @@ const Char91__componentChar93PreviewSplatRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs/': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/lovable': typeof LovableRoute
+  '/studio': typeof StudioRoute
   '/typography': typeof TypographyRoute
+  '/api/generate-pixel-icon': typeof ApiGeneratePixelIconRoute
+  '/specs/$name': typeof SpecsNameRoute
+  '/specs/': typeof SpecsIndexRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -87,38 +150,66 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/accessibility'
+    | '/auth'
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
+    | '/studio'
     | '/typography'
+    | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs/'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/accessibility'
+    | '/auth'
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
+    | '/studio'
     | '/typography'
+    | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   id:
     | '__root__'
     | '/'
+    | '/accessibility'
+    | '/auth'
     | '/colors'
     | '/components'
     | '/icons'
+    | '/lovable'
+    | '/studio'
     | '/typography'
+    | '/api/generate-pixel-icon'
+    | '/specs/$name'
+    | '/specs/'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  AuthRoute: typeof AuthRoute
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
   IconsRoute: typeof IconsRoute
+  LovableRoute: typeof LovableRoute
+  StudioRoute: typeof StudioRoute
   TypographyRoute: typeof TypographyRoute
+  ApiGeneratePixelIconRoute: typeof ApiGeneratePixelIconRoute
+  SpecsNameRoute: typeof SpecsNameRoute
+  SpecsIndexRoute: typeof SpecsIndexRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
   Char91__mockupChar93PreviewSplatRoute: typeof Char91__mockupChar93PreviewSplatRoute
 }
@@ -130,6 +221,20 @@ declare module '@tanstack/react-router' {
       path: '/typography'
       fullPath: '/typography'
       preLoaderRoute: typeof TypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable': {
+      id: '/lovable'
+      path: '/lovable'
+      fullPath: '/lovable'
+      preLoaderRoute: typeof LovableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/icons': {
@@ -153,11 +258,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/specs/': {
+      id: '/specs/'
+      path: '/specs'
+      fullPath: '/specs/'
+      preLoaderRoute: typeof SpecsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/specs/$name': {
+      id: '/specs/$name'
+      path: '/specs/$name'
+      fullPath: '/specs/$name'
+      preLoaderRoute: typeof SpecsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/generate-pixel-icon': {
+      id: '/api/generate-pixel-icon'
+      path: '/api/generate-pixel-icon'
+      fullPath: '/api/generate-pixel-icon'
+      preLoaderRoute: typeof ApiGeneratePixelIconRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/__mockup/preview/$': {
@@ -179,10 +319,17 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  AuthRoute: AuthRoute,
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
   IconsRoute: IconsRoute,
+  LovableRoute: LovableRoute,
+  StudioRoute: StudioRoute,
   TypographyRoute: TypographyRoute,
+  ApiGeneratePixelIconRoute: ApiGeneratePixelIconRoute,
+  SpecsNameRoute: SpecsNameRoute,
+  SpecsIndexRoute: SpecsIndexRoute,
   Char91__componentChar93PreviewSplatRoute:
     Char91__componentChar93PreviewSplatRoute,
   Char91__mockupChar93PreviewSplatRoute: Char91__mockupChar93PreviewSplatRoute,

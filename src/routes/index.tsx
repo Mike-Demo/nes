@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { ShowcaseShell } from "../showcase/ShowcaseShell";
 import { NesButton } from "../components/NesButton";
@@ -23,9 +23,9 @@ function OverviewPage() {
     <ShowcaseShell>
       <h1>NES.css Design System</h1>
       <p className="lede">
-        A retro 8-bit design system. Chunky pixel borders, hard shadows, and the
-        Press Start 2P font — every component looks like it belongs on a
-        cartridge title screen.
+        A retro 8-bit design system now combined with the Lovable-focused demo
+        work from Mike-Demo/nes.css. Build AI-native interfaces with prompt
+        flows, agent status, review states, and human-in-the-loop handoffs.
       </p>
 
       <div className="showcase-section">
@@ -40,6 +40,9 @@ function OverviewPage() {
             <NesButton variant="primary">Start</NesButton>
             <NesButton variant="success">Continue</NesButton>
             <NesButton variant="error">Quit</NesButton>
+            <Link to="/lovable" className="nes-btn is-warning">
+              Lovable patterns
+            </Link>
           </div>
         </NesContainer>
       </div>
