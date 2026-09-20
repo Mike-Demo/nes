@@ -34,9 +34,8 @@ in `vite.config.ts`. Add a public route there and to `public/sitemap.xml`.
 
 ## Notes
 
-- The build produces static files only; there is no Workers/SSR output by
-  default. Set `LOVABLE_WORKER_BUILD=1` before `vite build` to get the
-  Cloudflare Workers build back (prerendering is skipped in that mode).
+- The project produces static output only and does not include a Worker
+  entrypoint or runtime.
 - Everything on the site is client-side: sign-in, saving, loading and deleting
   custom icons talk to the hosted backend directly from the browser.
 - One exception: **AI icon generation** in the Icon studio needs a server route
