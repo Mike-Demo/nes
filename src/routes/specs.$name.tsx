@@ -12,12 +12,30 @@ export const Route = createFileRoute("/specs/$name")({
     const spec = COMPONENT_SPECS[params.name];
     const title = spec ? `${spec.name} spec — NES.css Design System` : "Component spec — NES.css Design System";
     const description = spec?.summary ?? "Component specification in the NES.css design system.";
+    const path = `/specs/${params.name}`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: path },
+      ],
+      links: [{ rel: "canonical", href: path }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: title,
+            description,
+            url: `https://design.2.MikeDemo.dev${path}`,
+            about: spec?.name ?? params.name,
+            isPartOf: { "@type": "WebSite", name: "NES.css Design System", url: "https://design.2.MikeDemo.dev/" },
+          }),
+        },
       ],
     };
   },

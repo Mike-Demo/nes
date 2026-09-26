@@ -13,6 +13,32 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Retro 8-bit design system: pixel-perfect React components built on NES.css." },
       { property: "og:title", content: "NES.css Design System" },
       { property: "og:description", content: "Retro 8-bit design system: pixel-perfect React components built on NES.css." },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "NES.css Design System",
+            url: "https://design.2.MikeDemo.dev/",
+            description: "Retro 8-bit design system: pixel-perfect React components built on NES.css.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareSourceCode",
+            name: "NES.css Design System",
+            description: "Typed React components, two palettes and 215 pixel rune icons in the NES.css style.",
+            programmingLanguage: ["TypeScript", "CSS"],
+            runtimePlatform: "React 19",
+            codeRepository: "https://github.com/Mike-Demo/nes.css",
+            license: "https://opensource.org/licenses/MIT",
+          },
+        ]),
+      },
     ],
   }),
   component: OverviewPage,

@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# LLM-readable summaries: https://design.2.MikeDemo.dev/llms.txt and /llms-full.txt
+Sitemap: https://design.2.MikeDemo.dev/sitemap.xml
