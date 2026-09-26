@@ -35,3 +35,6 @@ Consolidated from the plan archive in `.lovable/plan/`.
       verification is currently manual browser checks plus an axe scan.
 - [ ] Enrich `usage` / `examples` / `antipatterns` in `.lovable/design-system.json`
       for the newer components.
+
+- [x] Agent-readiness: robots.txt AI crawlers, llms.txt, llms-full.txt, JSON-LD, canonical/og:url
+- [ ] Unblock AI crawlers (HTTP 403) in Spacefast/DNS bot protection for design.1 and design.2 — user action

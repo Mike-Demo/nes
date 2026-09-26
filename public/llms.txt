@@ -1,0 +1,47 @@
+# NES.css Design System
+
+> A retro 8-bit React design system built on NES.css: chunky pixel borders, the Press Start 2P font, hard shadows, two palettes (retro and fresh), 20 typed components, 215 pixel rune icons and a pixel icon studio. Static site; all pages are prerendered HTML.
+
+Setup: import the library stylesheet `styles/nes.css` once at the app root, then import components (e.g. `NesButton`, `NesContainer`) from the library barrel. Visual variation is expressed only through props (`variant`, `size`, `state`, `dark`, `rounded`). Switch palettes with `data-nes-theme="fresh"` on `<html>`.
+
+Full component reference with props: https://design.2.MikeDemo.dev/llms-full.txt
+
+## Pages
+
+- [Overview](https://design.2.MikeDemo.dev/): What the system is and how to set it up
+- [Components](https://design.2.MikeDemo.dev/components): Live examples of every component
+- [Component specs](https://design.2.MikeDemo.dev/specs): Anatomy, spacing, colors, typography, states and props per component
+- [Colors](https://design.2.MikeDemo.dev/colors): Both palettes and their tokens
+- [Typography](https://design.2.MikeDemo.dev/typography): Type scale and font stack
+- [Icons](https://design.2.MikeDemo.dev/icons): NES icons, pixel sprites, rune icons and custom icons
+- [Accessibility](https://design.2.MikeDemo.dev/accessibility): Contrast numbers, rules and fallbacks
+- [Icon studio](https://design.2.MikeDemo.dev/studio): Draw custom 16x16 pixel icons
+
+## Component specs
+
+- [NesButton](https://design.2.MikeDemo.dev/specs/NesButton)
+- [NesBadge](https://design.2.MikeDemo.dev/specs/NesBadge)
+- [NesBalloon](https://design.2.MikeDemo.dev/specs/NesBalloon)
+- [NesContainer](https://design.2.MikeDemo.dev/specs/NesContainer)
+- [NesDialog](https://design.2.MikeDemo.dev/specs/NesDialog)
+- [NesField](https://design.2.MikeDemo.dev/specs/NesField)
+- [NesInput](https://design.2.MikeDemo.dev/specs/NesInput)
+- [NesTextarea](https://design.2.MikeDemo.dev/specs/NesTextarea)
+- [NesCheckbox](https://design.2.MikeDemo.dev/specs/NesCheckbox)
+- [NesRadio](https://design.2.MikeDemo.dev/specs/NesRadio)
+- [NesSelect](https://design.2.MikeDemo.dev/specs/NesSelect)
+- [NesList](https://design.2.MikeDemo.dev/specs/NesList)
+- [NesProgress](https://design.2.MikeDemo.dev/specs/NesProgress)
+- [NesTable](https://design.2.MikeDemo.dev/specs/NesTable)
+- [NesText](https://design.2.MikeDemo.dev/specs/NesText)
+- [NesAvatar](https://design.2.MikeDemo.dev/specs/NesAvatar)
+- [NesIcon](https://design.2.MikeDemo.dev/specs/NesIcon)
+- [NesPixelArt](https://design.2.MikeDemo.dev/specs/NesPixelArt)
+- [NesRuneIcon](https://design.2.MikeDemo.dev/specs/NesRuneIcon)
+- [NesPixelIcon](https://design.2.MikeDemo.dev/specs/NesPixelIcon)
+
+## Licenses
+
+- NES.css styles: MIT
+- Rune Icons: Apache 2.0
+- Press Start 2P font: SIL Open Font License
