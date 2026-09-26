@@ -216,23 +216,17 @@
   margin: 0;
 }
 
-.icon-tile-wrap {
-  position: relative;
-}
-
-/* Visual size stays 24x24. A transparent 10px border widens the hit
-   area to 44x44 (the visible square is the padding box); taps that
-   graze the copy tile are guarded by the delete confirmation. */
+/* Sits in normal flow below the tile, so its enlarged 44x44 hit area
+   (the visible square is the 24x24 padding box inside a transparent
+   10px border) can never overlap the copy tile or a neighbouring tile. */
 .icon-tile-delete {
-  position: absolute;
-  top: -18px;
-  right: -10px;
   box-sizing: content-box;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
+  margin: 4px auto 0;
   padding: 0;
   border: 10px solid transparent;
   background: var(--nes-error) padding-box;
