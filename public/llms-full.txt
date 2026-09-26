@@ -1,0 +1,260 @@
+# NES.css Design System — full component reference
+
+> Retro 8-bit React design system built on NES.css. Import the stylesheet once (styles/nes.css), then use the typed components below. Visual variation only via props (variant, size, state, dark, rounded).
+
+## NesButton
+
+The primary action control. A native <button> with a 4px pixel border and stepped hover/active shadows.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesButton
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| variant | "default" \| "primary" \| "success" \| "warning" \| "error" | — | Semantic color. |
+| disabled | boolean | — | Native disabled state. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesBadge
+
+Small pixel label for counts and statuses; optionally split with an icon half.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesBadge
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| variant | "dark" \| "primary" \| "success" \| "warning" \| "error" | — | Fill color. |
+| href | string | — | Optional link target. |
+| icon / iconVariant | ReactNode / variant | — | Splits the badge with an icon half. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesBalloon
+
+Speech balloon for dialogue text with a pixel tail on the left or right.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesBalloon
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| from | "left" \| "right" | — | Tail side. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesContainer
+
+Framed panel with an optional title that sits on the border. The main grouping surface.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesContainer
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| title | string | — | Border caption. |
+| dark / rounded / centered | boolean | — | Visual modifiers. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesDialog
+
+Native <dialog> styled as a pixel panel; buttons inside a method=dialog form close it.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesDialog
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| open | boolean | — | Open on mount. |
+| dark / rounded | boolean | — | Visual modifiers. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesField
+
+Label + control wrapper that keeps the accessible name wired.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesField
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| label | string | — | Visible label. |
+| htmlFor | string | — | Id of the control. |
+| inline | boolean | — | Label beside the control. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesInput
+
+Text input with a pixel frame and semantic validation variants.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesInput
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| state | "success" \| "warning" \| "error" | — | Validation color. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesTextarea
+
+Multi-line sibling of NesInput with the same frame and variants.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesTextarea
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| dark | boolean | — | Inverted colors. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesCheckbox
+
+Checkbox drawn from pixel box-shadows, with the label baked in.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesCheckbox
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| label | ReactNode | — | Required visible label. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesRadio
+
+Radio button with a pixel dot; group by name.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesRadio
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| label | string | — | Visible label. |
+| name | string | — | Group name. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesSelect
+
+Native select wrapped in a pixel frame with a drawn arrow.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesSelect
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| state | "success" \| "warning" \| "error" | — | Border color. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesList
+
+Unordered list with pixel disc or circle markers.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesList
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| variant | "disc" \| "circle" | — | Marker style. |
+| dark | boolean | — | Dark-surface colors. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesProgress
+
+Native <progress> in a pixel frame with semantic fills.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesProgress
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| value / max | number | — | Progress amount. |
+| variant | "default" \| "primary" \| "success" \| "warning" \| "error" \| "pattern" | — | Fill color or striped texture. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesTable
+
+Bordered data table with pixel cell dividers.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesTable
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| bordered / centered / dark / responsive | boolean | — | Visual modifiers. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesText
+
+Inline text colored with a semantic token.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesText
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| variant | "primary" \| "success" \| "warning" \| "error" \| "disabled" | — | Text color. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesAvatar
+
+Pixelated avatar image in four fixed sizes.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesAvatar
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| size | "small" \| "medium" \| "large" | — | Fixed pixel size. |
+| rounded | boolean | — | Pixel-round crop. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesIcon
+
+Built-in NES icon set (hearts, stars, coins, social marks) drawn from box-shadows.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesIcon
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| name | NesIconName | — | Icon id. |
+| size | "small" \| "medium" \| "large" | — | Fixed size. |
+| empty | boolean | — | Outline variant (heart/star). |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesPixelArt
+
+Large pixel sprites (characters, devices, logos) at their drawn size.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesPixelArt
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| name | NesPixelArtName | — | Sprite id. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesRuneIcon
+
+215 monochrome pixel glyphs that fill with currentColor.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesRuneIcon
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| name | RuneIconName | — | Glyph id (see RUNE_ICONS). |
+| size | "small" \| "medium" \| "large" | — | Fixed size. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
+## NesPixelIcon
+
+Renders icons drawn in the Icon studio from grid data; palette colors or monochrome currentColor.
+
+Spec: https://design.2.MikeDemo.dev/specs/NesPixelIcon
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| icon | PixelIconData | — | Grid + palette from the studio export. |
+| size | "small" \| "medium" \| "large" | — | Fixed size. |
+| monochrome | boolean | — | Ignore the palette and use currentColor. |
+| className | string | — | Merged with the NES classes. |
+| ref | Ref | — | Forwarded to the underlying element. |
+
