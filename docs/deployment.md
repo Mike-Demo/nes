@@ -42,7 +42,10 @@ off, so the list is authoritative.
 
 - `public/_redirects` — `/*  /index.html  200`, so deep links and client-side
   navigation targets resolve on hosts that would otherwise 404.
-- `public/robots.txt` — allows all crawlers, points at `/sitemap.xml`.
+- `public/robots.txt` — allows all crawlers (AI crawlers named explicitly), points at the absolute sitemap URL.
+- `public/llms.txt` / `public/llms-full.txt` — LLM-readable site summary and full component/props reference. Regenerate `llms-full.txt` when component props change.
+- Home and spec pages carry Schema.org JSON-LD (`WebSite`, `SoftwareSourceCode`, `TechArticle`) in `head()`.
+- If agents get HTTP 403 on the live site, the block is in the host/CDN bot protection, not the code.
 - `public/sitemap.xml` — all 30 public routes, base URL
   `https://design.2.MikeDemo.dev`. Update the base URL here if the domain
   changes.
