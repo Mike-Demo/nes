@@ -37,6 +37,9 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.16",
     "vite-tsconfig-paths": "^6.0.2",
-    "zod": "^3.25.76"
+    "zod": "^4.6.0"
+  },
+  "overrides": {
+    "srvx": "0.12.0"
   }
 }
