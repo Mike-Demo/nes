@@ -1,0 +1,206 @@
+{
+  "boltSlidesVersion": 1,
+  "boltSlidesId": "11011050-f9d6-4d43-8a9e-3e43af51bbaf",
+  "deck": {
+    "title": "NES — 8-bit design system for the web",
+    "transition": "fade",
+    "font": "nes",
+    "accent": "#209cee"
+  },
+  "slides": [
+    {
+      "id": "s1",
+      "position": 0,
+      "layout": "cover",
+      "props": {
+        "kicker": "8-BIT DESIGN SYSTEM · FOR THE WEB",
+        "title": "==NES==\nA design system with a cheat code for charm.",
+        "subtitle": "Chunky pixels, a strict palette, and interfaces that feel like a game — bottled as real, reusable components.",
+        "foot": "github.com/Mike-Demo/nes · Open source"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Open with the hook: modern web design got clean to the point of sterile. NES is the cheat code — real engineering with the flavour of the 8-bit era.",
+      "status": "none"
+    },
+    {
+      "id": "s2",
+      "position": 1,
+      "layout": "contrast",
+      "props": {
+        "kicker": "The idea",
+        "title": "Modern UI got sterile. The NES era had flavour.",
+        "left": {
+          "label": "NOW",
+          "title": "Clean to a fault",
+          "points": [
+            "Rounded corners, soft greys, safe whitespace",
+            "Every product looks like every other product",
+            "Zero personality, zero memory"
+          ]
+        },
+        "right": {
+          "label": "NES ERA",
+          "title": "Interfaces that felt like a game",
+          "points": [
+            "Chunky pixels and hard offset shadows",
+            "A strict palette you could name on sight",
+            "Every screen felt like pressing START"
+          ]
+        }
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Contrast the sterile present with the flavour of 8-bit. The punchline: NES bottles that flavour as actual web components, not a screenshot of nostalgia.",
+      "status": "none"
+    },
+    {
+      "id": "s3",
+      "position": 2,
+      "layout": "bento",
+      "props": {
+        "kicker": "The system",
+        "title": "Four rules that make it 8-bit.",
+        "tiles": [
+          {
+            "k": "TYPE",
+            "title": "Press Start 2P",
+            "body": "Display type straight from the cartridge label — pixel-perfect at every size.",
+            "c": 3,
+            "variant": "accent"
+          },
+          {
+            "k": "PALETTE",
+            "title": "#209cee on #212529",
+            "body": "The classic NES blue over near-black. A palette strict enough to be a brand.",
+            "c": 3
+          },
+          {
+            "k": "BORDERS",
+            "title": "4px pixel edges",
+            "body": "Hard corners and offset shadows — no blur, no softness, all signal.",
+            "c": 3
+          },
+          {
+            "k": "COMPONENTS",
+            "title": "Buttons, tags, cards, pagination",
+            "body": "The everyday kit of a web UI, each piece dressed in full 8-bit.",
+            "c": 3
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Walk the four ingredients: type, palette, borders, components. Everything else in the system is built from these.",
+      "status": "none"
+    },
+    {
+      "id": "s4",
+      "position": 3,
+      "layout": "poster",
+      "props": {
+        "label": "PROVEN IN THE WILD",
+        "title": "One live Tumblr blog, themed end to end.",
+        "body": "Every post type — text, photo, quote, link, chat, audio, video, answers — rendered in full 8-bit dress. Not a mock-up: a production blog running on the system today.",
+        "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Proof beats promises. The Tumblr theme exercises every post type the platform has — the system holds up across all of them.",
+      "status": "none"
+    },
+    {
+      "id": "s5",
+      "position": 4,
+      "layout": "statement",
+      "props": {
+        "kicker": "WHY A SYSTEM, NOT A ONE-OFF THEME",
+        "title": "Tokens and components. The next site gets the look in ==hours==, consistently.",
+        "body": "Nostalgia with engineering discipline: change a token, the whole world reskins."
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "The thesis of the project. A one-off theme is a souvenir; a system is a tool. Tokens and components make the second site cheap and the tenth one trivial.",
+      "status": "none"
+    },
+    {
+      "id": "s6",
+      "position": 5,
+      "layout": "pillars",
+      "props": {
+        "title": "Key features.",
+        "items": [
+          {
+            "title": "Pixel components",
+            "body": "Buttons, inputs, cards, tags, pagination — the full everyday kit, 8-bit to the last pixel."
+          },
+          {
+            "title": "Design tokens",
+            "body": "Palette, type, and spacing as variables. Retheme the world by changing a handful of values."
+          },
+          {
+            "title": "Strict palette",
+            "body": "NES blue on near-black, WCAG AA contrast throughout — charm that never costs readability."
+          },
+          {
+            "title": "Open source",
+            "body": "MIT-spirited and public on GitHub. Fork it, theme with it, ship it."
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Four pillars: the component kit, the token layer, the accessible strict palette, and open source. Keep it quick.",
+      "status": "none"
+    },
+    {
+      "id": "s7",
+      "position": 6,
+      "layout": "statGrid",
+      "props": {
+        "kicker": "Status",
+        "title": "Live in production. Open to everyone.",
+        "stats": [
+          { "value": "LIVE", "label": "In production", "caption": "Theming a real Tumblr blog today" },
+          { "value": "8", "label": "Post types themed", "caption": "Text, photo, quote, link, chat, audio, video, answers" },
+          { "value": "OSS", "label": "Open source", "caption": "Public on GitHub, ready to fork" }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Status check: this is not a concept — it ships. Production use, broad coverage of post types, and the code is public.",
+      "status": "none"
+    },
+    {
+      "id": "s8",
+      "position": 7,
+      "layout": "cover",
+      "props": {
+        "kicker": "INSERT COIN TO CONTINUE",
+        "title": "==github.com/Mike-Demo/nes==",
+        "subtitle": "Star it, fork it, theme with it — and give your next site a cheat code for charm.",
+        "foot": "NES · 8-bit design system for the web"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Close on the repo link and the call to action. One screen, one URL, one ask.",
+      "status": "none"
+    }
+  ]
+}
